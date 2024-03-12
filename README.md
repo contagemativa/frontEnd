@@ -1,0 +1,1 @@
+## Frontend do sistema para contagem ativa
