@@ -14,7 +14,7 @@ No projeto de extensão, nosso objetivo é criar um sistema para ajudar a todos 
 ## Tecnologias que Serão Usadas
 
 - Tailwind
-- css
-- javascript (Jquey)
-- html
+- Css
+- Javascript (Jquey)
+- Html
 
