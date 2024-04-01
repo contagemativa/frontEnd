@@ -4,6 +4,7 @@
     "tailwindcss": "^3.4.3"
   },
   "scripts": {
+    "intall-daisy": "npm i -D daisyui@latest",
     "build-tailwind": "npx tailwindcss -i ./App/View/css/input.css -o ./App/View/css/output.css --watch"
   }
 }
