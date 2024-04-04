@@ -7,10 +7,19 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("daisyui")
+    require("@tailwindcss/typography"),
+    require("daisyui"),
   ],
   daisyui: {
-    themes: ["ligth", "dark"],
+    themes: [{
+      ligth: {
+        "primary": "#B8398C",
+        "secondary": "#CC74AE",
+        "accent": "#37cdbe",
+        "neutral": "#3d4451",
+        "base-100": "#ffffff"
+      }
+    }]
   },
 }
 
