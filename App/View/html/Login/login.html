@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/App/View/css/output.css" type="text/css" rel="stylesheet">
+    <link href="/App/View/css/login.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="flex flex-col justify-center items-center min-h-screen">
+      <div>
+        <img src="../../img/logo-contagem-ativa.png" width="250">
+      </div>
+      <div>
+        <div class="card shrink-0 w-full max-w-sm shadow-xl bg-base-100">
+          <form class="card-body">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Login</span>
+              </label>
+              <input type="Login" placeholder="login" class="input input-bordered" id = "usuario" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Senha</span>
+              </label>
+              <input type="password" placeholder="senha" class="input input-bordered" id="senha" required />
+              <label class="label">
+                <a href="" class="label-text-alt link link-hover">Esqueceu sua senha?</a>
+              </label>
+            </div>
+            <div class="form-control mt-6">
+              <button type="button" id="btnLogin" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../../Controller/LoginController.js"></script>
+</body>
+</html>
