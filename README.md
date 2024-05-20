@@ -15,6 +15,7 @@ No projeto de extensão, nosso objetivo é criar um sistema para ajudar a todos 
 
 - Tailwind
 - Css
-- Javascript (Jquey)
+- Javascript (jQuery)
 - Html
+- React
 

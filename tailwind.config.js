@@ -2,12 +2,14 @@
 module.exports = {
   content: [
     "./App/View/**/*.{html,js}",
-    "./App/View/**/**/*.{html,js}"
+    "./App/Components/*.{js,jsx}",
+    "./App/Components/**/*.{js,jsx}"
   ], 
   theme: {
     extend: {},
   },
   plugins: [
+    require("@tailwindcss/typography"),
     require("daisyui")],
   daisyui: {
     themes: [{
