@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../Common/Button/Button.jsx';
+import Logo from '../../Common/Logo/Logo.jsx';
 
 export default function LoginForm() {
   return (
@@ -38,7 +39,7 @@ export default function LoginForm() {
               </label>
             </div>
             <div className="form-control mt-6">
-              <Button onClick={() => console.log('Botão clicado!')}>Login</Button>
+              <Button color={"bg-teal-600"}>Logar</Button>
             </div>
           </form>
         </div>
