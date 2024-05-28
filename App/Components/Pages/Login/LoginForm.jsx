@@ -1,8 +1,26 @@
-import React from 'react';
-import Button from '../../Common/Button/Button.jsx';
-import Logo from '../../Common/Logo/Logo.jsx';
+//#region Imports
+
+import React, { useState } from "react";
+import Button from "../../Common/Button/Button.jsx";
+import Logo from "../../Common/Logo/Logo.jsx";
+import { handleLoginClick } from "../../../Controllers/loginController.js";
+
+//#endregion
 
 export default function LoginForm() {
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleButtonClick = async () => {
+    try {
+      await handleButtonClick(user, password, setError);
+    } catch (error) {
+      console.error("Erro na requisição", error);
+      setError("Erro no login");
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div>
@@ -14,10 +32,12 @@ export default function LoginForm() {
                 <span className="label-text">Login</span>
               </label>
               <input
+                id="usuario"
                 type="Login"
                 placeholder="login"
                 className="input input-bordered"
-                id="usuario"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
                 required
               />
             </div>
@@ -26,10 +46,12 @@ export default function LoginForm() {
                 <span className="label-text">Senha</span>
               </label>
               <input
+                id="senha"
                 type="password"
                 placeholder="senha"
                 className="input input-bordered"
-                id="senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
               <label className="label">
@@ -39,7 +61,11 @@ export default function LoginForm() {
               </label>
             </div>
             <div className="form-control mt-6">
-              <Button color={"bg-teal-600"}>Logar</Button>
+              <Button
+                buttonText={"Login"}
+                className="btn btn-primary"
+                onClick={handleLoginClick}
+              ></Button>
             </div>
           </form>
         </div>
@@ -47,4 +73,3 @@ export default function LoginForm() {
     </div>
   );
 }
-

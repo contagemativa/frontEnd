@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './App/Components/index.jsx',
@@ -48,4 +49,9 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL)
+    })
+  ]
 };

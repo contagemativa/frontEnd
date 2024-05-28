@@ -1,13 +1,9 @@
-import React from "react";
+import React from 'react';
 
-function onClick(){
-  alert("Teste");
-}
-
-export default function App (){
+export default function Button({...props}) {
   return (
-    <>
-      <button onClick={onClick}>Logar</button>
-    </>
-  )
+    <button className={props.className} onClick={props.onClick}>
+      {props.buttonText}
+    </button>
+  );
 }
