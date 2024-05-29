@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../public/css/output.css';  // Certifique-se de que o caminho está correto
+import '../../public/css/output.css';  
 
 const App = () => {
   return (

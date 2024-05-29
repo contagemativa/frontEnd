@@ -42,6 +42,9 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
+    headers: { 
+      "Access-Control-Allow-Origin": "*",
+    },
     static: {
       directory: path.join(__dirname, 'public'),
     },

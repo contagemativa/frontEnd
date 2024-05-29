@@ -12,9 +12,13 @@ export default function LoginForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleButtonClick = async () => {
+  // Handle - Clique do botão
+  const handleButtonClick = async (event) => {
+    
+    event.preventDefault();
+    
     try {
-      await handleButtonClick(user, password, setError);
+      await handleLoginClick(user, password, setError);
     } catch (error) {
       console.error("Erro na requisição", error);
       setError("Erro no login");
@@ -64,7 +68,7 @@ export default function LoginForm() {
               <Button
                 buttonText={"Login"}
                 className="btn btn-primary"
-                onClick={handleLoginClick}
+                onClick={handleButtonClick}
               ></Button>
             </div>
           </form>
