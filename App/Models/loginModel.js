@@ -8,7 +8,7 @@ export async function login(usuario, senha) {
 
   console.log(config.apiUrl);
 
-  const response = await fetch(`https://contagemativabackend.azurewebsites.net/funcionario/login`, {
+  const response = await fetch('/api/funcionario/login', {
     mode: 'cors',
     method: 'POST',
     headers: {

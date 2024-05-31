@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './App/Components/index.jsx',
@@ -31,7 +32,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: 'public', 
+              context: 'public',
             },
           },
         ],
@@ -42,7 +43,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
-    headers: { 
+    headers: {
       "Access-Control-Allow-Origin": "*",
     },
     static: {
@@ -51,10 +52,16 @@ module.exports = {
     compress: true,
     port: 9000,
     historyApiFallback: true,
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'https://contagemativabackend.azurewebsites.net',
+        changeOrigin: true,
+        pathRewrite: {'^/api': ''},
+      },
+    ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL)
-    })
+    new Dotenv()
   ]
 };
