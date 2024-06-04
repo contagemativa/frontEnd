@@ -1,10 +1,27 @@
-import { login } from '../Models/loginModel';
+import { login } from "../Models/loginModel";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export async function handleLoginClick(usuario, senha, setError) {
+export async function handleLoginClick(usuario, senha, navigate, setError) {
   try {
-    const data = await login(usuario, senha);
-    console.log('Login bem-sucedido!', data);
+    if (usuario === "") {
+      toast.info('Campo "Usuário" em branco!');
+      toast.clearWaitingQueue();
+    } else if (senha === "") {
+      toast.info('Campo "Senha" em branco!');
+      toast.clearWaitingQueue();
+    } else {
+      // Chama a função de login (Verificar dado de retorno)
+      //const data = await login(usuario, senha);
+      //console.log("Login bem-sucedido!", data);
+      console.log("Login bem-sucedido!");
+      navigate("/home");
+      toast.clearWaitingQueue();
+    }
   } catch (error) {
-    console.log('Erro na requisição', error);
+    console.log("Erro na requisição", error);
+    // Aqui você pode exibir uma mensagem de erro usando ToastManager
+    toast.error("Erro na requisição: " + error.message);
+    toast.clearWaitingQueue();
   }
 }

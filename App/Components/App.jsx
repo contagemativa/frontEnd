@@ -1,11 +1,15 @@
 import React from 'react';
 import '../../public/css/output.css';  
+import { Routes, Route } from 'react-router-dom';
+import LoginForm from '../View/Login/LoginForm';
+import Home from '../View/Home/Home'; 
 
 const App = () => {
   return (
-    <div className="p-6 bg-blue-500 text-white">
-      <h1 className="text-4xl">Hello, React!</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
   );
 };
 

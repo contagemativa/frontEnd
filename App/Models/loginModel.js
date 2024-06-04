@@ -8,8 +8,7 @@ export async function login(usuario, senha) {
 
   console.log(config.apiUrl);
 
-  const response = await fetch('/api/funcionario/login', {
-    mode: 'cors',
+  const response = await fetch('/funcionario/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -17,7 +16,7 @@ export async function login(usuario, senha) {
     body: JSON.stringify(loginData),
   });
 
-  if (response.ok) {
+  if (response.status === 200) {
     return response.json();
   } else {
     throw new Error('Erro no login');
