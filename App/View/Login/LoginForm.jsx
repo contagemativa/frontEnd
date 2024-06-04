@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Button from "../../Components/Common/Button/Button.jsx";
 import Logo from "../../Components/Common/Logo/Logo.jsx";
 import { handleLoginClick } from "../../Controllers/loginController.js";
+import '../../../public/css/output.css';  
 import { useNavigate } from 'react-router-dom';
 
 //#endregion

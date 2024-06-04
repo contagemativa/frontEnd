@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../public/css/output.css';  
 import { Routes, Route } from 'react-router-dom';
 import LoginForm from '../View/Login/LoginForm';
 import Home from '../View/Home/Home'; 
