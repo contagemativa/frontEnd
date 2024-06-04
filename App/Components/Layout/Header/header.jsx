@@ -1,4 +1,5 @@
 import React from "react"
+import User from "./userBox";
 
 export default function Header(){
   return (
@@ -9,9 +10,7 @@ export default function Header(){
 
       <div class="navbar-end">
         <div class="dropdown dropdown-end">
-          <div tabindex="0" role="button" class="px-4 py-2 m-1 bg-secondary rounded-2xl bg-opacity-40">
-            <h1>ADM - ADM</h1>
-          </div>
+          <User></User>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-md bg-secondary rounded-box w-52">
             <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>

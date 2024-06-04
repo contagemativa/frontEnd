@@ -1,15 +1,10 @@
 import React from 'react';
-import HeaderAluno from '../../Components/Layout/Header/headerAluno.jsx'
+import Header from '../../Components/Layout/Header/Header.jsx'
 
 
 const Home = () => {
-  return (
-    
-    
-    <HeaderAluno />
-    
-      
-    
+  return (     
+    <Header/>      
   );
 };
 

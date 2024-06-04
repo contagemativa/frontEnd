@@ -1,6 +1,7 @@
 import { login } from "../Models/loginModel";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import config from "../config";
 
 export async function handleLoginClick(usuario, senha, navigate, setError) {
   try {
@@ -14,6 +15,7 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
       // Chama a função de login (Verificar dado de retorno)
       //const data = await login(usuario, senha);
       //console.log("Login bem-sucedido!", data);
+      config.user = usuario;
       console.log("Login bem-sucedido!");
       navigate("/home");
       toast.clearWaitingQueue();
