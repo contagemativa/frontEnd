@@ -19,9 +19,9 @@
     "webpack-dev-server": "^5.0.4"
   },
   "scripts": {
-    "build-css": "npx postcss -i public/css/input.css -o public/css/output.css --watch",
+    "build-css": "npx tailwindcss -i public/css/input.css -o public/css/output.css --watch",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --watch"
+    "start": "webpack serve --mode development"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13",

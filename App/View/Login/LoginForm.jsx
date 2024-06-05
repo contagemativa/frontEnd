@@ -23,7 +23,7 @@ export default function LoginForm() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div>
-        <Logo />
+        <Logo width={300}/>
         <div className="card shrink-0 w-full max-w-sm shadow-xl bg-base-100">
           <form className="card-body">
             <div className="form-control">

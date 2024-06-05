@@ -3,7 +3,7 @@ import User from "./userBox";
 
 export default function Header(){
   return (
-    <div class="navbar">
+    <header class="navbar">
       <div class="navbar-start rounded-r-2xl ">
         <h1>Contagem Ativa</h1>
       </div>
@@ -23,7 +23,7 @@ export default function Header(){
           </svg>
         </button>
       </div>
-    </div>
+    </header>
   );
 }
 
