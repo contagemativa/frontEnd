@@ -3,15 +3,15 @@ import User from "./userBox";
 
 export default function Header(){
   return (
-    <div class="navbar bg-primary text-base-100">
+    <div class="navbar">
       <div class="navbar-start rounded-r-2xl ">
         <h1>Contagem Ativa</h1>
       </div>
 
       <div class="navbar-end">
         <div class="dropdown dropdown-end">
-          <User></User>
-          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-md bg-secondary rounded-box w-52">
+          <User/>
+          <ul tabindex="0" class="dropdown-content z-[1] menu shadow-md bg-secondary rounded-box w-52">
             <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>
           </ul>

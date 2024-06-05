@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import LoginForm from '../View/Login/LoginForm';
 import Home from '../View/Home/Home'; 
 
-const App = () => {
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginForm />} />
@@ -12,4 +12,4 @@ const App = () => {
   );
 };
 
-export default App;
+

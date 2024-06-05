@@ -19,13 +19,12 @@
     "webpack-dev-server": "^5.0.4"
   },
   "scripts": {
-    "build-css": "npx postcss Public/css/input.css -o Public/css/output.css",
+    "build-css": "npx postcss -i public/css/input.css -o public/css/output.css --watch",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "start": "webpack serve --mode development --watch"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13",
-    "cors": "^2.8.5",
     "datatables.net": "^2.0.7",
     "datatables.net-dt": "^2.0.7",
     "dotenv": "^16.4.5",
