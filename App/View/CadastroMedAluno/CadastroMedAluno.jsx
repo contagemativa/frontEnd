@@ -9,7 +9,9 @@ import Button from "../../Components/Common/Button/Button.jsx";
 import { FaLocationDot } from "react-icons/fa6";
 import Card from "../../Components/Common/Card/Card.jsx";
 
-export default function Home() {
+
+
+export default function CadastroMedAluno() {
     return (
         <>
             <Background className="background h-72 bg-primary">
@@ -54,9 +56,10 @@ export default function Home() {
                                         </div>
                                         <input type="password" placeholder="Confirme a Senha Digitada" className="input input-bordered w-full max-w-xs" />
                                     </label>
-
-                                    <Button className="btn btn-secondary" buttonText="Alterar"/>
                                 </form>
+                                <div className="form-control mt-6">
+                                    <Button className="btn btn-primary" buttonText="Alterar"/>
+                                </div>
                             </div>
                         </div>
                     </div>
