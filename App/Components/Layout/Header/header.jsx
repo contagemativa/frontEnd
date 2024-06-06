@@ -1,15 +1,15 @@
 import React from "react";
 import User from "../../Common/Box/userBox";
 
-export default function Header() {
+export default function Header({className}) {
   return (
-    <header className="navbar p-2 text-base-100">
+    <header className={`${className} navbar p-2 text-base-100`}>
       <div className="navbar-start rounded-r-2xl ">
         <h1>Contagem Ativa</h1>
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">
-          <User visible={false}/>
+          <User visible={true} className="flex justify-center px-4 py-1 m-1 rounded-lg bg-secondary bg-opacity-40 invisible lg:visible" />
           <ul
             tabIndex="0"
             className="dropdown-content z-[1] menu shadow-md bg-secondary rounded-box w-52"
