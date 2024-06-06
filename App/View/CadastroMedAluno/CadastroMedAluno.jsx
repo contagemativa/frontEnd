@@ -31,7 +31,7 @@ export default function CadastroMedAluno() {
                     <div className="grid justify-items-center">
                         <div className="card card-compact w-96 bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <form action="POST" >
+                                <form action="PUT" >
                                     <label className="form-control w-full max-w-xs">
                                         <div className="label">
                                             <span className="label-text">Nome Completo:</span>
