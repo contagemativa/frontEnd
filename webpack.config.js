@@ -45,6 +45,9 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
+      watch: {
+        ignored: /node_modules/,
+      },
     },
     compress: true,
     port: 9000,
