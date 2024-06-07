@@ -1,15 +1,12 @@
 #program-container {
-  color: var(--color-base-100); /* text-base-100 */
+  color: gray; /* text-base-100 */
   min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
-article {
+#article {
+    padding-bottom: 2.5rem;
     margin: auto 0;
 }
-
-footer {
-    position: absolute;
-    bottom: 0;
-  }

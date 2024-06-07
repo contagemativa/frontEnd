@@ -9,12 +9,12 @@ import Button from "../../Components/Common/Button/Button.jsx";
 
 
 
-export default function CadastroMedAluno() {
+export default function CadastroAluno() {
     return (
         <>
             <Background className="background h-64 bg-primary lg:bg-transparent">
                 <Header className="bg-primary"/>
-                <article className="p-4">
+                <article className="p-4 page-container">
                     <div className="grid justify-items-center">
                         <div>
                             <div className="flex justify-center">
