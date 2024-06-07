@@ -7,7 +7,7 @@ export default function Footer(...props) {
     return (
     <footer className="footer footer-center lg:footer-left p-10 bg-gray-200 text-primary">
         <aside>
-            <Logo width={150} />
+            <Logo width={160} />
             <b><p>Contagem Ativa<br/>Secretaria Municipal de Esportes e Lazer</p></b>
         </aside> 
         <nav>
