@@ -11,7 +11,7 @@ export default function Footer(...props) {
             <b><p>Contagem Ativa<br/>Secretaria Municipal de Esportes e Lazer</p></b>
         </aside> 
         <nav>
-            <h6 className="footer-title">Social</h6> 
+            <h4 className="footer-title">Social</h4> 
             <div className="grid justify-items-center gap-4">
                 <a href="https://portal.contagem.mg.gov.br/">https://portal.contagem.mg.gov.br/</a>
                 <div className="flex gap-2">

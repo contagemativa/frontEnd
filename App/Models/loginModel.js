@@ -8,7 +8,7 @@ export async function login(usuario, senha) {
 
   console.log(config.apiUrl);
 
-  const response = await fetch('/funcionario/login', {
+  const response = await fetch(`${config.apiUrl}/funcionario/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

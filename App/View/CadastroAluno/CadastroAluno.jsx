@@ -1,8 +1,9 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import User from "../../Components/Common/Box/userBox.jsx";
+import User from "../../Components/Common/Box/UserBox.jsx";
 import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
+import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
 
 export default function CadastroAluno() {
   return (
@@ -14,10 +15,7 @@ export default function CadastroAluno() {
               <FaUserCircle size={120} color="white" />
             </div>
             <div className="my-6">
-              <User
-                visible={true}
-                className="flex justify-center p-4 m-1 bg-base-100 rounded-lg shadow-md shadow-gray-400 text-slate-700 visible lg:invisible"
-              ></User>
+              <UserBoxMobile/>
             </div>
           </div>
         </div>
