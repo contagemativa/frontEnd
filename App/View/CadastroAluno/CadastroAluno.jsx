@@ -3,8 +3,14 @@ import { FaUserCircle } from "react-icons/fa";
 import User from "../../Components/Common/Box/userBox.jsx";
 import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
+import InformacoesGeral from "../../Components/formCadastro/InformacoesGeral.jsx";
 
-export default function CadastroAluno() {
+import HookInfoGeral from "../../Hooks/FormCadastro/HookInfoGeral.jsx";
+
+export default function ConfigAluno() {
+  const componentes = [<InformacoesGeral />];
+
+  const[currentState, currentComponent] = HookInfoGeral(componentes)
   return (
     <>
       <MainFrame>
@@ -22,60 +28,21 @@ export default function CadastroAluno() {
           </div>
         </div>
         <div>
-          <div>
-            <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
-              Configuração
-            </p>
-          </div>
-          <div className="grid justify-items-center">
-            <div className="card card-compact w-full lg:w-1/4 bg-base-100 shadow-xl">
-              <div className="card-body">
-                <form action="PUT">
-                  <label className="form-control w-full">
-                    <div className="label">
-                      <span className="label-text">Nome Completo:</span>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Digite Seu Nome Completo"
-                      className="input input-bordered w-full"
-                    />
-                  </label>
-                  <label className="form-control w-full">
-                    <div className="label">
-                      <span className="label-text">Nome De Usuario:</span>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Digite o Nome de Usuario"
-                      className="input input-bordered w-full"
-                    />
-                  </label>
-                  <label className="form-control w-full">
-                    <div className="label">
-                      <span className="label-text">Senha:</span>
-                    </div>
-                    <input
-                      type="password"
-                      placeholder="Digite Sua senha"
-                      className="input input-bordered w-full"
-                    />
-                  </label>
-                  <label className="form-control w-full">
-                    <div className="label">
-                      <span className="label-text">Confirma Senha:</span>
-                    </div>
-                    <input
-                      type="password"
-                      placeholder="Confirme a Senha Digitada"
-                      className="input input-bordered w-full"
-                    />
-                  </label>
-                </form>
-                <div className="form-control mt-6">
-                  <Button className="btn btn-primary" buttonText="Alterar" />
+          <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
+            Configuração
+          </p>
+        </div>
+        <div className="grid justify-items-center">
+          <div className="card card-compact w-full lg:w-1/4 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <form action="PUT">
+                <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
+                  Informações gerais
+                </p>
+                <div>
+                    {currentComponent}
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
