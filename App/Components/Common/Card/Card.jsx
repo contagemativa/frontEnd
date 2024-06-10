@@ -1,23 +1,18 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-export default function Card({...props}) {
+export default function Card({ ...props }) {
   const navigate = useNavigate();
 
   return (
     <>
-        <div className="card bg-base-100 shadow-xl image-full">
-            <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
+      <div className="card w-full shadow-lg">
+        <div className="card-body text-primary">
+          {props.cardIcon}
+          <h2 className="card-title">{props.CardText}</h2>
         </div>
+      </div>
     </>
-
-    
   );
 }

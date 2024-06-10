@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUser, FaUserCircle } from "react-icons/fa";
 import Card from "../../Components/Common/Card/Card.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
 import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
@@ -18,7 +18,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid justify-items-center">
+        <div className="justify-items-center">
+          <div>
+            <Card cardText="Aluno" cardIcon={FaUser}></Card>
+          </div>
+          <div>
+            <Card></Card>
+          </div>
+          <div>
+            <Card></Card>
+          </div>
           <div>
             <Card></Card>
           </div>
