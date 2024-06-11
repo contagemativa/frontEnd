@@ -1,5 +1,4 @@
 import React from "react";
-import { FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export default function Card({ ...props }) {
@@ -7,10 +6,10 @@ export default function Card({ ...props }) {
 
   return (
     <>
-      <div className="card w-full shadow-lg">
-        <div className="card-body text-primary">
+      <div className={`card shadow-md ${props.classCard}`}>
+        <div className={`card-body ${props.cardTextColor}`}>
           {props.cardIcon}
-          <h2 className="card-title">{props.CardText}</h2>
+          <h1 className="card-title">{props.cardText}</h1>
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ export default function MainFrame({...props}) {
             <Background>
                 <Header/>
                     <article className="p-4 page-container min-h-screen">
-                        {props.children}        
+                        {props.children}      
                     </article>
                 <Footer/>
             </Background>
