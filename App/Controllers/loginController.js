@@ -13,8 +13,8 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
       toast.clearWaitingQueue();
     } else {
       // Chama a função de login (Verificar dado de retorno)
-      // const data = await login(usuario, senha);
-      // console.log("Login bem-sucedido!", data);
+      const data = await login(usuario, senha);
+      console.log("Login bem-sucedido!", data);
       navigate("/home");
       toast.clearWaitingQueue();
     }

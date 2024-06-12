@@ -6,12 +6,14 @@ export default function Card({ ...props }) {
 
   return (
     <>
-      <div className={`card shadow-md ${props.classCard}`}>
-        <div className={`card-body ${props.cardTextColor}`}>
-          {props.cardIcon}
-          <h1 className="card-title">{props.cardText}</h1>
+      <a href={navigate(`${props.changeComponent}`)}>
+        <div className={`card shadow-md ${props.classCard}`}>
+          <div className={`${props.cardTextColor}`}>
+            {props.cardIcon}
+            <h1 className="card-title">{props.cardText}</h1>
+          </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }
