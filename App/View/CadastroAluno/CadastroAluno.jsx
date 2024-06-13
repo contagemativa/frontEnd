@@ -13,10 +13,10 @@ import useForm from "../../Hooks/useForm.jsx"
 export default function CadastroAluno() {
 
     const formComponents = [
-        <InformacoesGerais/>
+        <InformacoesGerais />
     ]
 
-    const {currentStep, currentComponent} = useForm(formComponents)
+    const { currentStep, currentComponent } = useForm(formComponents)
 
     return (
         <>
@@ -39,13 +39,18 @@ export default function CadastroAluno() {
                 <div className="grid justify-items-center">
                     <div className="card card-compact w-full lg:w-1/4 bg-base-100 shadow-xl">
                         <div className="card-body">
-                            <form action="">
-                                {currentComponent}
-                            </form>
-                            <div class="flex justify-between p-4 bg-base-200">
-                                <div class="flex items-center space-x-4">
-                                    <Button className="btn btn-primary" buttonText="Voltar" />
+                            <div className="form-control">
+                                <form action="">
+                                    <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
+                                        Informações gerais
+                                    </p>
+                                    {currentComponent}
+                                </form>
+                                <div className="flex p-5 justify-between" >
+
+                                    <Button className="btn btn-primary w-50" buttonText="Voltar" />
                                     <Button className="btn btn-primary" buttonText="Continuar" />
+
                                 </div>
                             </div>
                         </div>
