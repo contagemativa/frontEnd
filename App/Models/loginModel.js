@@ -1,24 +1,24 @@
-import config from '../config';
+import config from "../config";
 
 export async function login(usuario, senha) {
   const loginData = {
-    username: usuario,
-    password: senha,
+    usuario: usuario,
+    senha: senha,
   };
 
-  console.log(config.apiUrl);
-
   const response = await fetch(`${config.apiUrl}/funcionario/login`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(loginData),
   });
 
   if (response.status === 200) {
-    return response.json();
+    return response;
+  } else if (response.status == 404) {
+    return response;
   } else {
-    throw new Error('Erro no login');
+    throw new Error("Erro no login");
   }
 }

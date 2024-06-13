@@ -3,14 +3,15 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import "../../public/css/output.css";
+import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 const root = createRoot(document.getElementById("program-container"));
 root.render(
   <>
     <Router>
-      <App>
-        <ToastContainer
+      <App/>
+      <ToastContainer
           position="top-right"
           autoClose={2300}
           hideProgressBar={false}
@@ -21,7 +22,6 @@ root.render(
           draggable
           pauseOnHover
         />
-      </App>
     </Router>
   </>
 );

@@ -6,6 +6,7 @@ import Logo from "../../Components/Common/Logo/Logo.jsx";
 import { handleLoginClick } from "../../Controllers/loginController.js";
 import '../../../public/css/output.css';  
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
 
 //#endregion
 

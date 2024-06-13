@@ -1,7 +1,5 @@
 import { login } from "../Models/loginModel";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import config from "../config";
 
 export async function handleLoginClick(usuario, senha, navigate, setError) {
   try {
@@ -12,11 +10,15 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
       toast.info('Campo "Senha" em branco!');
       toast.clearWaitingQueue();
     } else {
-      // Chama a função de login (Verificar dado de retorno)
+      // Função de Login
       const data = await login(usuario, senha);
-      console.log("Login bem-sucedido!", data);
-      navigate("/home");
-      toast.clearWaitingQueue();
+
+      if (data.status == 200) {
+        navigate("/home");
+        toast.clearWaitingQueue();
+      } else if (data.status == 404) {
+        toast.error("Usuario não cadastrado no banco ou credenciais inválidas");
+      }
     }
   } catch (error) {
     console.log("Erro na requisição", error);
