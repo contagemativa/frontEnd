@@ -2,7 +2,7 @@ import { useState  } from "react";
 
 function useForm(steps) {
 
-    const [currentStep, setcurrentSetp] = useState(0)
+    const [currentStep, setcurrentSetp] = useState(5)
 
 
     return{

@@ -5,6 +5,11 @@ import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
 import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
 import InformacoesGerais from "../../Components/C_CadastroALuno/InformacoesGerais.jsx"
+import DadosGerais1 from "../../Components/C_CadastroALuno/DadosGerais1.jsx";
+import DadosGerais2 from "../../Components/C_CadastroALuno/DadosGerais2.jsx";
+import DadosGerais3 from "../../Components/C_CadastroALuno/DadosGerais3.jsx";
+import DadosGerais4 from "../../Components/C_CadastroALuno/DadosGerais4.jsx";
+import DadosFisicos1 from "../../Components/C_CadastroALuno/DadosFisicos1.jsx"
 
 // Import Hooks
 import useForm from "../../Hooks/useForm.jsx"
@@ -13,7 +18,13 @@ import useForm from "../../Hooks/useForm.jsx"
 export default function CadastroAluno() {
 
     const formComponents = [
-        <InformacoesGerais />
+        <InformacoesGerais />,
+        <DadosGerais1 />,
+        <DadosGerais2 />,
+        <DadosGerais3 />,
+        <DadosGerais4 />,
+        <DadosFisicos1 />,
+        
     ]
 
     const { currentStep, currentComponent } = useForm(formComponents)
@@ -33,7 +44,7 @@ export default function CadastroAluno() {
                 </div>
                 <div>
                     <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
-                        Configuração
+                        Cadastro Aluno
                     </p>
                 </div>
                 <div className="grid justify-items-center">
@@ -41,9 +52,6 @@ export default function CadastroAluno() {
                         <div className="card-body">
                             <div className="form-control">
                                 <form action="">
-                                    <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
-                                        Informações gerais
-                                    </p>
                                     {currentComponent}
                                 </form>
                                 <div className="flex p-5 justify-between" >
