@@ -10,10 +10,10 @@ export default function Home() {
     <>
       <MainFrame>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card cardText="Aluno" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaUser size={35}/>}></Card>
-            <Card cardText="Professor" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaChalkboardTeacher size={35}/>}></Card>
-            <Card cardText="Regionais" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaLocationDot size={35}/>}></Card>
-            <Card cardText="Cadastros" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<ImUserPlus size={35}/>}></Card>
+            <Card link="/Aluno" cardText="Aluno" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaUser size={35}/>}></Card>
+            <Card link="/Professor" cardText="Professor" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaChalkboardTeacher size={35}/>}></Card>
+            <Card link="/Regionais" cardText="Regionais" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<FaLocationDot size={35}/>}></Card>
+            <Card link="/Cadastros" cardText="Cadastros" classCard="bg-primary py-4 p-6" cardTextColor="text-white" cardIcon={<ImUserPlus size={35}/>}></Card>
         </div>        
       </MainFrame>
     </>

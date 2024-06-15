@@ -11,7 +11,7 @@ export default function MainFrame({...props}) {
             <Background>
                 <Header/>
                     <article className="p-4 page-container min-h-screen mb-5">
-                        <MediaQuery maxWidth={1024}>
+                        <MediaQuery maxWidth={1023}>
                             <UserBoxMobile/>
                         </MediaQuery>
                         {props.children}      

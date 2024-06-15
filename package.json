@@ -21,8 +21,8 @@
   "scripts": {
     "build-css": "npx tailwindcss -i public/css/input.css -o public/css/output.css --watch",
     "build": "webpack --mode production",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --mode development"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "jquery": "^3.7.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
+    "react-data-table-component": "^7.6.2",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-responsive": "^10.0.0",

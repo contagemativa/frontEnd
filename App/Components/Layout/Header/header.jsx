@@ -1,9 +1,10 @@
 import React from "react";
-import  UserBoxHeader from "../../Common/Box/UserBoxHeader.jsx";
+import UserBoxHeader from "../../Common/Box/UserBoxHeader.jsx";
 import { MdExitToApp } from "react-icons/md";
 import { IoIosSettings } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-export default function Header({className}) {
+export default function Header({ className }) {
   return (
     <header className="navbar bg-primary p-2 text-base-100">
       <div className="navbar-start rounded-r-2xl ">
@@ -11,7 +12,7 @@ export default function Header({className}) {
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">
-          <UserBoxHeader/>
+          <UserBoxHeader />
           <ul
             tabIndex="0"
             className="dropdown-content z-[1] menu shadow-md bg-secondary rounded-box w-52"
@@ -25,10 +26,14 @@ export default function Header({className}) {
           </ul>
         </div>
         <button className="btn btn-ghost">
-          <IoIosSettings size={25}/>
+          <Link to={"/Configuracoes"}>
+            <IoIosSettings size={25} />
+          </Link>
         </button>
         <button className="btn btn-ghost">
-          <MdExitToApp size={25}/>
+          <Link to={"/"}>
+            <MdExitToApp size={25} />
+          </Link>
         </button>
       </div>
     </header>
