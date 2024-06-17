@@ -1,7 +1,8 @@
 import { getAllFuncionarios } from "../Models/funcionarioModel";
 import { PostLogin } from "../Models/loginModel";
+import { getAllNucleos } from "../Models/nucleoModel";
 import { getAllPessoas } from "../Models/pessoaModel";
-import Usuario from "../Models/userLoggedModel";
+import Usuario, { salvarUsuario } from "../Models/Class/usuarioClass";
 import { toast } from "react-toastify";
 
 export async function handleLoginClick(usuario, senha, navigate, setError) {
@@ -17,10 +18,11 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
       const login = await PostLogin(usuario, senha);
       
       if (login.status == 200) {
-        const usuario = await getAllFuncionarios();
-        const pessoas = await getAllPessoas();    
+        const pessoas = await getAllPessoas();
+        const pessoa = pessoas.find((p) => p.usuario === usuario);
 
-        console.log(usuario, pessoas);
+        const usuarioLogado = new Usuario(pessoa.id, pessoa.nome, pessoa.usuario);
+        salvarUsuario(usuarioLogado);
 
         navigate("/home");
         toast.clearWaitingQueue();
