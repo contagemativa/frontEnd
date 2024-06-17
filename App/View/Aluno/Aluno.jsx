@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
 import { FaNotesMedical } from "react-icons/fa";
 import { PiUserListFill } from "react-icons/pi";
 import { RiMedicineBottleFill } from "react-icons/ri";
 import Card from "../../Components/Common/Card/Card.jsx";
+import config from "../../config.js";
 
 export default function DetailAluno() {
+  
+  useEffect(() => {
+    document.title = `${config.documentTitle} | Aluno`;
+  }, []);
+
   return (
     <>
       <MainFrame>

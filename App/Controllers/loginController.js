@@ -1,4 +1,7 @@
-import { login } from "../Models/loginModel";
+import { getAllFuncionarios } from "../Models/funcionarioModel";
+import { PostLogin } from "../Models/loginModel";
+import { getAllPessoas } from "../Models/pessoaModel";
+import Usuario from "../Models/userLoggedModel";
 import { toast } from "react-toastify";
 
 export async function handleLoginClick(usuario, senha, navigate, setError) {
@@ -10,13 +13,20 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
       toast.info('Campo "Senha" em branco!');
       toast.clearWaitingQueue();
     } else {
-      // Função de Login
-      const data = await login(usuario, senha);
 
-      if (data.status == 200) {
+      const login = await PostLogin(usuario, senha);
+      
+      if (login.status == 200) {
+        const usuario = await getAllFuncionarios();
+        const pessoas = await getAllPessoas();    
+
+        console.log(usuario, pessoas);
+
         navigate("/home");
         toast.clearWaitingQueue();
-      } else if (data.status == 404) {
+      }
+
+      else if (login.status == 404) {
         toast.error("Usuario não cadastrado no banco ou credenciais inválidas");
       }
     }
@@ -27,3 +37,24 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
     toast.clearWaitingQueue();
   }
 }
+
+export async function handleSetUserLogged(usario) {
+  const data = await getUserLogged(usario);
+
+  if (data.status == 200) {
+
+  }
+}
+
+export const saveUser = (usuario) => {
+  localStorage.setItem('usuario', JSON.stringify(usuario));
+};
+
+export const recuperarUsuario = () => {
+  const usuarioData = localStorage.getItem('usuario');
+  if (usuarioData) {
+    const { id, nome, email } = JSON.parse(usuarioData);
+    return new Usuario(id, nome, email);
+  }
+  return null;
+};

@@ -1,7 +1,6 @@
 const config = {
   apiUrl: process.env.REACT_APP_API_URL,
-  user: "Victor Magalhães"
+  documentTitle: "Contagem Ativa",
 };
-
 
 export default config;

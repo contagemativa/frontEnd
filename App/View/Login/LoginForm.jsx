@@ -1,16 +1,17 @@
-//#region Imports
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../Components/Common/Button/Button.jsx";
 import Logo from "../../Components/Common/Logo/Logo.jsx";
 import { handleLoginClick } from "../../Controllers/loginController.js";
 import '../../../public/css/output.css';  
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer } from "react-toastify";
-
-//#endregion
+import config from "../../config.js";
 
 export default function LoginForm() {
+
+  useEffect(() => {
+    document.title = `${config.documentTitle} | Login`;
+  }, []);
+
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
   const [error, setError] = useState('');

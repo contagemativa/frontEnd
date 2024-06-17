@@ -1,6 +1,6 @@
 import config from "../config";
 
-export async function login(usuario, senha) {
+export async function PostLogin(usuario, senha) {
   const loginData = {
     usuario: usuario,
     senha: senha,
