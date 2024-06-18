@@ -5,6 +5,7 @@ import Home from "../View/Home/home";
 import ConfigAluno from "../View/ConfigAluno/ConfigAluno"
 import Aluno from "../View/Aluno/Aluno";
 import ListaAlunos from "../View/Aluno/ListaAlunos";
+import Cadastros from "../View/Cadastro/Cadastro";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         <Route path="/ListaAlunos" element={<ListaAlunos />} />
         {/* <Route path="/Professor" element={<Professor/>} /> */}
         {/* <Route path="/Regionais" element={<Regionais/>} /> */}
-        {/* <Route path="/Cadastros" element={<Cadastros/>} /> */}
+        <Route path="/Cadastros" element={<Cadastros/>} /> 
         <Route path="/ConfigAluno" element={<ConfigAluno/>}/>
       </Routes>
     </>
