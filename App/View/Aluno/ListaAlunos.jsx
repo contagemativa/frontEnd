@@ -11,6 +11,10 @@ import { fetchNucleos } from "../../Controllers/nucleoController.js";
 import { fetchRegionais } from "../../Controllers/regionalController.js";
 import { toast } from "react-toastify";
 import config from "../../config.js";
+import MediaQuery from "react-responsive";
+import TableFilterMobile from "../../Components/Layout/Filter/TableFilterMobile.jsx";
+import ReactModal from "react-modal";
+import { useNavigate } from "react-router-dom";
 
 export default function ListaAlunos() {
 
@@ -22,6 +26,11 @@ export default function ListaAlunos() {
     const [loading, setLoading] = useState(true);
     const [dataContentTable, setDataContentTable] = useState([]);
     const [filteredRecords, setFilteredRecords] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedAluno, setSelectedAluno] = useState(null);
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const customStyles = {
         headCells: {
@@ -38,7 +47,8 @@ export default function ListaAlunos() {
     const columns = [
         {
             name: "ID",
-            selector: (row) => row.aluno.id
+            selector: (row) => row.aluno.id,
+            width: '50px',
         },
         {
             name: "Nome",
@@ -59,10 +69,17 @@ export default function ListaAlunos() {
             name: "Ações",
             cell: row => (
                 <div className="flex gap-1">
-                    <Button className="p-2 bg-gray-100 text-gray-400 hover:bg-accent hover:text-white rounded-lg flex justify-center" buttonText={<FaEdit size={15} />}></Button>
-                    <Button className="p-2 bg-gray-100 text-gray-400 hover:bg-red-600 hover:text-white rounded-lg flex justify-center" buttonText={<FaTrashAlt size={15} />}></Button>
+                  <Button
+                    className="p-2 bg-gray-100 text-gray-400 hover:bg-accent hover:text-white rounded-lg flex justify-center"
+                    buttonText={<FaEdit size={15} />}
+                    onClick={() => handleEdit(row)}
+                  />
+                  <Button className="p-2 bg-gray-100 text-gray-400 hover:bg-red-600 hover:text-white rounded-lg flex justify-center"
+                          buttonText={<FaTrashAlt size={15} />}
+                          onClick={() => { setSelectedAluno(row); setShowModal(true); }}
+                  />
                 </div>
-            ),
+              ),
             ignoreRowClick: true,
             button: true,
         }
@@ -128,13 +145,51 @@ export default function ListaAlunos() {
     const handleClearFilters = () => {
         setFilteredRecords(dataContentTable);
       };
+    
+    const handleEdit = (aluno) => {
+        navigate(`/Aluno?${aluno.id}`, { state: { aluno } });
+    };
+
+    const handleDelete = async () => {
+        try {
+          await deleteAluno(selectedAluno.aluno.id, login, password);
+          setDataContentTable(dataContentTable.filter(a => a.aluno.id !== selectedAluno.aluno.id));
+          setFilteredRecords(filteredRecords.filter(a => a.aluno.id !== selectedAluno.aluno.id));
+          setShowModal(false);
+          setSelectedAluno(null);
+          setLogin("");
+          setPassword("");
+          toast.success("Aluno deletado com sucesso!");
+        } catch (error) {
+          console.error("Erro ao deletar aluno", error);
+          toast.error("Erro ao deletar aluno");
+        }
+      };
 
     return (
         <MainFrame>
-            <div className="gap-1 my-4">
-                <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
-            </div>
-            <TableFilter data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+
+            <MediaQuery maxWidth={599}>
+                <div className="my-4">
+                    <h1 className="flex justify-center text-3xl font-bold text-slate-700 my-4">Lista de Alunos</h1>
+                    <TableFilterMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                </div>
+            </MediaQuery>
+
+            <MediaQuery minWidth={600} maxWidth={1023}>
+                <div className="flex justify-between items-center gap-1 my-2">
+                    <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
+                    <TableFilterMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                </div>
+            </MediaQuery>
+
+            <MediaQuery minWidth={1024}>
+                <div className="gap-1 my-4">
+                    <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
+                </div>
+                <TableFilter data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+            </MediaQuery>
+
             <div className="rounded-xl">
                 <DataTable
                     className="border shadow-md rounded-xl shadow-gray-100"
@@ -148,6 +203,29 @@ export default function ListaAlunos() {
                     customStyles={customStyles}
                 />
             </div>
+
+            {showModal && (
+            <ReactModal onClose={() => setShowModal(false)}>
+                <div>
+                    <h2>Confirmar Exclusão</h2>
+                    <p>Para excluir o aluno, por favor, insira suas credenciais:</p>
+                    <input
+                    type="text"
+                    placeholder="Login"
+                    value={login}
+                    onChange={(e) => setLogin(e.target.value)}
+                    />
+                    <input
+                    type="password"
+                    placeholder="Senha"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Button onClick={handleDelete} buttonText="Confirmar" />
+                    <Button onClick={() => setShowModal(false)} buttonText="Cancelar" />
+                </div>
+            </ReactModal>
+            )}
             
         </MainFrame>
     );

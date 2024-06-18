@@ -20,3 +20,7 @@ export const recuperarUsuario = () => {
   }
   return null;
 };
+
+export const limparUsuario = () => {
+  localStorage.removeItem('usuario');
+};
