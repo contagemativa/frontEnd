@@ -5,7 +5,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: './App/Components/index.jsx',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'),  // Alterado de 'public' para 'build'
     filename: 'bundle.js',
     publicPath: '/'
   },

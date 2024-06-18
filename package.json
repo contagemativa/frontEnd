@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "https://contagemativa.github.io/frontEnd/",
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
@@ -9,6 +10,7 @@
     "daisyui": "^4.10.2",
     "dotenv-webpack": "^8.1.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-loader": "^8.1.1",
@@ -31,7 +33,6 @@
     "datatables.net": "^2.0.7",
     "datatables.net-dt": "^2.0.7",
     "dotenv": "^16.4.5",
-    "gh-pages": "^6.1.1",
     "jquery": "^3.7.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
