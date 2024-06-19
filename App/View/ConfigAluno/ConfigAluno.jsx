@@ -4,26 +4,12 @@ import User from "../../Components/Common/Box/UserBox.jsx";
 import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
 import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
-import InformacoesGeral from "../../Components/formCadastro/InformacoesGeral.jsx";
-import HookInfoGeral from "../../Hooks/FormCadastro/HookInfoGeral.jsx";
+
 
 export default function ConfigAluno() {
-  const componentes = [<InformacoesGeral />];
-
-  const[currentState, currentComponent] = HookInfoGeral(componentes)
   return (
     <>
       <MainFrame>
-        <div className="grid justify-items-center">
-          <div>
-            <div className="flex justify-center">
-              <FaUserCircle size={120} color="white" />
-            </div>
-            <div className="my-6">
-              <UserBoxMobile/>
-            </div>
-          </div>
-        </div>
         <div>
           <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
             Configuração
@@ -37,7 +23,7 @@ export default function ConfigAluno() {
                   Informações gerais
                 </p>
                 <div>
-                    {currentComponent}
+                    
                 </div>
               </form>
             </div>
