@@ -44,16 +44,6 @@ export default function CadastroAluno() {
     return (
         <>
             <MainFrame>
-                <div className="grid justify-items-center">
-                    <div>
-                        <div className="flex justify-center">
-                            <FaUserCircle size={120} color="white" />
-                        </div>
-                        <div className="my-6">
-                            <UserBoxMobile />
-                        </div>
-                    </div>
-                </div>
                 <div>
                     <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
                         Cadastro Aluno
