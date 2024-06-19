@@ -1,10 +1,9 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import User from "../../Components/Common/Box/UserBox.jsx";
+import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
 import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
-import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
-import InformacoesGerais from "../../Components/C_CadastroALuno/InformacoesGerais.jsx"
+import InformacoesGerais from "../../Components/C_CadastroALuno/InformacoesGerais.jsx";
 import DadosGerais1 from "../../Components/C_CadastroALuno/DadosGerais1.jsx";
 import DadosGerais2 from "../../Components/C_CadastroALuno/DadosGerais2.jsx";
 import DadosGerais3 from "../../Components/C_CadastroALuno/DadosGerais3.jsx";
@@ -22,9 +21,7 @@ import QuestionarioProntidao3 from "../../Components/C_CadastroALuno/Questionari
 // Import Hooks
 import useForm from "../../Hooks/useForm.jsx"
 
-
 export default function CadastroAluno() {
-
     const formComponents = [
         <InformacoesGerais />,
         <DadosGerais1 />,
@@ -40,10 +37,9 @@ export default function CadastroAluno() {
         <QuestionarioProntidao />,
         <QuestionarioProntidao2 />,
         <QuestionarioProntidao3 />
-        
-    ]
+    ];
 
-    const { currentStep, currentComponent } = useForm(formComponents)
+    const { currentStep, currentComponent, nextStep, prevStep } = useForm(formComponents);
 
     return (
         <>
@@ -63,19 +59,35 @@ export default function CadastroAluno() {
                         Cadastro Aluno
                     </p>
                 </div>
-                <div className="grid justify-items-center">
-                    <div className="card card-compact w-full lg:w-1/4 bg-base-100 shadow-xl">
+                <div className="flex justify-center">
+                    <div className="flex justify-center">
+                        <ul className="steps steps-vertical">
+                            <li className={`step ${currentStep >= 0 ? 'step-primary' : ''}`}>Informações Gerais</li>
+                            <li className={`step ${currentStep >= 1 ? 'step-primary' : ''}`}>Dados Gerais 1</li>
+                            <li className={`step ${currentStep >= 2 ? 'step-primary' : ''}`}>Dados Gerais 2</li>
+                            <li className={`step ${currentStep >= 3 ? 'step-primary' : ''}`}>Dados Gerais 3</li>
+                            <li className={`step ${currentStep >= 4 ? 'step-primary' : ''}`}>Dados Gerais 4</li>
+                            <li className={`step ${currentStep >= 5 ? 'step-primary' : ''}`}>Dados Físicos 1</li>
+                            <li className={`step ${currentStep >= 6 ? 'step-primary' : ''}`}>Dados Físicos 2</li>
+                            <li className={`step ${currentStep >= 7 ? 'step-primary' : ''}`}>Dados Físicos 3</li>
+                            <li className={`step ${currentStep >= 8 ? 'step-primary' : ''}`}>Dados Físicos 4</li>
+                            <li className={`step ${currentStep >= 9 ? 'step-primary' : ''}`}>Dados Socioeconômicos</li>
+                            <li className={`step ${currentStep >= 10 ? 'step-primary' : ''}`}>Dados Socioeconômicos 2</li>
+                            <li className={`step ${currentStep >= 11 ? 'step-primary' : ''}`}>Questionário Prontidão</li>
+                            <li className={`step ${currentStep >= 12 ? 'step-primary' : ''}`}>Questionário Prontidão 2</li>
+                            <li className={`step ${currentStep >= 13 ? 'step-primary' : ''}`}>Questionário Prontidão 3</li>
+                        </ul>
+                    </div>
+                    <div className="card card-compact w-full lg:w-1/4 bg-base-100 shadow-xl h-fit">
                         <div className="card-body">
                             <div className="form-control">
                                 <form action="">
                                     {currentComponent}
                                 </form>
-                                <div className="flex p-5 justify-between" >
-
-                                    <Button className="btn btn-primary w-50" buttonText="Voltar" />
-                                    <Button className="btn btn-primary" buttonText="Continuar" />
-
-                                </div>
+                                <div className="flex p-5 justify-between">
+                                    <Button className="btn btn-primary w-50" buttonText="Voltar" onClick={prevStep} />
+                                    <Button className="btn btn-primary" buttonText="Continuar" onClick={nextStep} />
+                                </div>                               
                             </div>
                         </div>
                     </div>
