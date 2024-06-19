@@ -1,5 +1,5 @@
 { 
-  "homepage": "https://contagemativa.github.io/frontEnd/",
+  "homepage": "https://contagemativa.github.io/frontEnd/public",
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
