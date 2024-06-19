@@ -13,8 +13,8 @@ const DadosGerais4 = () => {
                 <input type="text" placeholder="RG do Aluno" className="input input-bordered w-full " />
             </label>
             <label className="form-control w-full flex">
-                <div className="flex gap-4 w-full">
-                    <div className="flex flex-col w-1/2">
+                <div className="flex gap-4 w-full flex-col-2">
+                    <div className="flex flex-col w-1/2"> 
                         <div className="label">
                             <span className="label-text">N°: *</span>
                         </div>

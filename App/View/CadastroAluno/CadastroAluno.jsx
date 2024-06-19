@@ -9,7 +9,15 @@ import DadosGerais1 from "../../Components/C_CadastroALuno/DadosGerais1.jsx";
 import DadosGerais2 from "../../Components/C_CadastroALuno/DadosGerais2.jsx";
 import DadosGerais3 from "../../Components/C_CadastroALuno/DadosGerais3.jsx";
 import DadosGerais4 from "../../Components/C_CadastroALuno/DadosGerais4.jsx";
-import DadosFisicos1 from "../../Components/C_CadastroALuno/DadosFisicos1.jsx"
+import DadosFisicos1 from "../../Components/C_CadastroALuno/DadosFisicos1.jsx";
+import DadosFisicos2 from "../../Components/C_CadastroALuno/DadosFisicos2.jsx";
+import DadosFisicos3 from "../../Components/C_CadastroALuno/DadosFisicos3.jsx";
+import DadosFisicos4 from "../../Components/C_CadastroALuno/DadosFisicos4.jsx";
+import DadosSocioeconomicos from "../../Components/C_CadastroALuno/DadosSocioeconomicos.jsx";
+import DadosSocioeconomicos2 from "../../Components/C_CadastroALuno/DadosSocioeconomicos2.jsx";
+import QuestionarioProntidao from "../../Components/C_CadastroALuno/QuestionarioProntidao.jsx";
+import QuestionarioProntidao2 from "../../Components/C_CadastroALuno/QuestionarioProntidao2.jsx";
+import QuestionarioProntidao3 from "../../Components/C_CadastroALuno/QuestionarioProntidao3.jsx";
 
 // Import Hooks
 import useForm from "../../Hooks/useForm.jsx"
@@ -24,6 +32,14 @@ export default function CadastroAluno() {
         <DadosGerais3 />,
         <DadosGerais4 />,
         <DadosFisicos1 />,
+        <DadosFisicos2 />,
+        <DadosFisicos3 />,
+        <DadosFisicos4 />,
+        <DadosSocioeconomicos />,
+        <DadosSocioeconomicos2 />,
+        <QuestionarioProntidao />,
+        <QuestionarioProntidao2 />,
+        <QuestionarioProntidao3 />
         
     ]
 
