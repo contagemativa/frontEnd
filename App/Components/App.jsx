@@ -4,6 +4,7 @@ import LoginForm from "../View/Login/LoginForm";
 import Home from "../View/Home/home";
 import ConfigAluno from "../View/ConfigAluno/ConfigAluno"
 import CadastroAluno from "../View/CadastroAluno/CadastroAluno";
+import CadastroAlunoPrevio from "../View/CadastroAluno/CadastroAlunoPrevio";
 import Aluno from "../View/Aluno/Aluno";
 import ListaAlunos from "../View/Aluno/ListaAlunos";
 import Cadastros from "../View/Cadastro/Cadastro";
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/Cadastros" element={<Cadastros/>} /> 
         <Route path="/ConfigAluno" element={<ConfigAluno/>}/>
         <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno/>}/>
+        <Route path="/Cadastros/CadastroAlunoPrevio" element={<CadastroAlunoPrevio/>}/>
       </Routes>
     </>
   );
