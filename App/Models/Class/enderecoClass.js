@@ -1,6 +1,4 @@
-// enderecoClass.js
-
-class Endereco {
+export default class Endereco {
     constructor({
       id = 0,
       cep = "",
@@ -28,6 +26,5 @@ class Endereco {
       return `${this.rua}, ${this.numero}, ${this.complemento}, ${this.bairro}, ${this.cidade} - ${this.estado}, ${this.pais}, CEP: ${this.cep}`;
     }
   }
-  
-  module.exports = Endereco;
+
   

@@ -16,3 +16,4 @@ export async function getAllPessoas() {
       throw new Error("Erro ao buscar alunos");
     }
   }
+

@@ -1,4 +1,4 @@
-class Pessoa {
+export default class Pessoa {
     constructor({
       id = 0,
       nome = "",
@@ -50,6 +50,5 @@ class Pessoa {
       if (senha) this.senha = senha;
     }
   }
-  
-  module.exports = Pessoa;
+
   
