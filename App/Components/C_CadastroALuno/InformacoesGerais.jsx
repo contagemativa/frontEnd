@@ -3,7 +3,7 @@ import React from "react";
 const InformacoesGerais = () => {
     return (
         <div>
-            <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
+            <p className="grid text-xl font-bold text-pink-500 justify-items-center">
                 Informações gerais
             </p>
             <label className="form-control w-full ">

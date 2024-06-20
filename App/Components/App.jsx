@@ -20,7 +20,7 @@ export default function App() {
         {/* <Route path="/Regionais" element={<Regionais/>} /> */}
         <Route path="/Cadastros" element={<Cadastros/>} /> 
         <Route path="/ConfigAluno" element={<ConfigAluno/>}/>
-        <Route path="/CadastroAluno" element={<CadastroAluno/>}/>
+        <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno/>}/>
       </Routes>
     </>
   );

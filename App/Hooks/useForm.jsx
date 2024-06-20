@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useForm(steps) {
+export default function useForm(steps) {
   const [currentStep, setCurrentStep] = useState(0);
 
   const nextStep = () => {
@@ -24,4 +24,4 @@ function useForm(steps) {
   };
 }
 
-export default useForm;
+

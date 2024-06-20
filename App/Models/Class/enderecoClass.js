@@ -1,6 +1,4 @@
-// enderecoClass.js
-
-class Endereco {
+export default  class Endereco {
     constructor({
       id = 0,
       cep = "",
