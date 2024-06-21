@@ -6,11 +6,10 @@ const DadosSocioeconomicos = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(aluno);
     setAluno((prevAluno) => ({
       ...prevAluno,
-      dadosSocioeconomicos: {
-        ...prevAluno.dadosSocioeconomicos,
+      condicoesSociais: {
+        ...prevAluno.condicoesSociais,
         [name]: value
       }
     }));
@@ -18,17 +17,15 @@ const DadosSocioeconomicos = () => {
 
   return (
     <div>
-      <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
-        Dados Socioeconômicos
-      </p>
+      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Socioeconômicos do Aluno</p>
       <label className="form-control w-full">
         <div className="label">
           <span className="label-text">Nº Total de Pessoas que residem no domicílio:</span>
         </div>
         <input
           type="text"
-          name="numPessoasResidem"
-          value={aluno.dadosSocioeconomicos.totalPessoasDomicilio}
+          name="pessoasNoDomicilio"
+          value={aluno.condicoesSociais.pessoasNoDomicilio}
           onChange={handleChange}
           placeholder="Número de pessoas"
           className="input input-bordered w-full"
@@ -39,9 +36,9 @@ const DadosSocioeconomicos = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="responsavelSustento"
+            name="responsavelPeloSustento"
             value="Eu mesmo(a)"
-            checked={aluno.dadosSocioeconomicos.responsavelSustento === "Eu mesmo(a)"}
+            checked={aluno.condicoesSociais.responsavelPeloSustento === "Eu mesmo(a)"}
             onChange={handleChange}
             className="radio"
           />
@@ -50,9 +47,9 @@ const DadosSocioeconomicos = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="responsavelSustento"
+            name="responsavelPeloSustento"
             value="Cônjuge"
-            checked={aluno.dadosSocioeconomicos.responsavelSustento === "Cônjuge"}
+            checked={aluno.condicoesSociais.responsavelPeloSustento === "Cônjuge"}
             onChange={handleChange}
             className="radio"
           />
@@ -61,9 +58,9 @@ const DadosSocioeconomicos = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="responsavelSustento"
+            name="responsavelPeloSustento"
             value="Filho(a)"
-            checked={aluno.dadosSocioeconomicos.responsavelSustento === "Filho(a)"}
+            checked={aluno.condicoesSociais.responsavelPeloSustento === "Filho(a)"}
             onChange={handleChange}
             className="radio"
           />
@@ -72,9 +69,9 @@ const DadosSocioeconomicos = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="responsavelSustento"
+            name="responsavelPeloSustento"
             value="Parente"
-            checked={aluno.dadosSocioeconomicos.responsavelSustento === "Parente"}
+            checked={aluno.condicoesSociais.responsavelPeloSustento === "Parente"}
             onChange={handleChange}
             className="radio"
           />
@@ -83,9 +80,9 @@ const DadosSocioeconomicos = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="responsavelSustento"
+            name="responsavelPeloSustento"
             value="Outros"
-            checked={aluno.dadosSocioeconomicos.responsavelSustento === "Outros"}
+            checked={aluno.condicoesSociais.responsavelPeloSustento === "Outros"}
             onChange={handleChange}
             className="radio"
           />

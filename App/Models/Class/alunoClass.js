@@ -40,19 +40,23 @@ export const AlunoProvider = ({ children }) => {
       deficiencia: '',
       problemaDeSaude: ''
     },
-    dadosSocioeconomicos: {
-      id: 0,
-      totalPessoasDomicilio: '',
-      principalResponsavelSustento: ''
+    condicoesSociais: {
+      aluno: 0,
+      pessoasNoDomicilio: 0,
+      responsavelPeloSustento: '',
+      rendaFamiliar: '',
+      programaDoGoverno: ''
     },
     questionarioProntidao:{
-      problemaCardiaco: "",
-      doresPeitoAtividades: "",
-      doresPeitoUltimoMes:"",
-      desiquilibrioTontura:"",
-      problemaOsseoArticular:"",
-      medicamentoPressao:"",
-      outraRazaoNaoPraticarAtividadeFisica:"",
+      id: 0,
+      aluno: 0,
+      quest1: "",
+      quest2: "",
+      quest3: "",
+      quest4: "",
+      quest5: "",
+      quest6: "",
+      quest7: ""
     },
     identidade:{
       id: 0,

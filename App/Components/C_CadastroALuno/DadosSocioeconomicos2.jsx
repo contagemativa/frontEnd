@@ -6,29 +6,28 @@ const DadosSocioeconomicos2 = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(aluno);
     setAluno((prevAluno) => ({
       ...prevAluno,
-      dadosSocioeconomicos: {
-        ...prevAluno.dadosSocioeconomicos,
+      condicoesSociais: {
+        ...prevAluno.condicoesSociais,
         [name]: value
       }
     }));
+
+    console.log(aluno);
   };
 
   return (
     <div>
-      <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
-        Dados Socioeconômicos
-      </p>
-      <p className="grid  justify-items">Qual o(a) principal responsável pelo sustento da família:</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Socioeconômicos do Aluno</p>
+      <p className="grid justify-items">Selecione a Renda Familiar:</p>
+      <div className="flex flex-col gap-6 my-2">
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="1 - Sem Renda"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "1 - Sem Renda"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "1 - Sem Renda"}
             onChange={handleChange}
             className="radio"
           />
@@ -37,9 +36,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="2 - até R$1000,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "2 - até R$1000,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "2 - até R$1000,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -48,9 +47,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="3 - De R$1001,00 até R$1500,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "3 - De R$1001,00 até R$1500,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "3 - De R$1001,00 até R$1500,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -59,9 +58,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="4 - De R$1501,00 até R$2000,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "4 - De R$1501,00 até R$2000,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "4 - De R$1501,00 até R$2000,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -70,9 +69,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="5 - R$2001,00 até R$2500,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "5 - R$2001,00 até R$2500,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "5 - R$2001,00 até R$2500,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -81,9 +80,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="6 - R$2501,00 até R$3000,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "6 - R$2501,00 até R$3000,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "6 - R$2501,00 até R$3000,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -92,9 +91,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="7 - Acima de R$3001,00"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "7 - Acima de R$3001,00"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "7 - Acima de R$3001,00"}
             onChange={handleChange}
             className="radio"
           />
@@ -103,9 +102,9 @@ const DadosSocioeconomicos2 = () => {
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            name="principalResponsavelSustento"
+            name="rendaFamiliar"
             value="8 - Não quero Declarar"
-            checked={aluno.dadosSocioeconomicos.principalResponsavelSustento === "8 - Não quero Declarar"}
+            checked={aluno.condicoesSociais.rendaFamiliar === "8 - Não quero Declarar"}
             onChange={handleChange}
             className="radio"
           />

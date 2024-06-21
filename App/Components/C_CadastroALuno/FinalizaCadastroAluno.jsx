@@ -6,21 +6,21 @@ const DadosFisicos4 = () => {
   console.log(aluno);
 
   const handleConfirmarCadastro = () => {
-    // Aqui você pode chamar um controller para cadastro do aluno
-    // Exemplo simplificado de como poderia ser:
     console.log("Dados do aluno a serem cadastrados:", aluno);
-    alert("Cadastro do aluno confirmado!"); // Exemplo de alerta, substitua por sua lógica real
+    alert("Cadastro do aluno confirmado!"); 
   };
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={handleConfirmarCadastro}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-      >
-        Confirmar Cadastro
-      </button>
+      <p className="grid text-2xl font-bold text-accent justify-items-left mb-2">Confirmar Cadastro</p>
+        <div className="flex flex-col gap-2">
+          <p className="grid justify-items-left italic">Nome: {aluno.pessoa.nome}</p>
+          <p className="grid justify-items-left italic">Data de Nascimento: {aluno.pessoa.dataDeNascimento}</p>
+          <p className="grid justify-items-left italic">Sexo: {aluno.pessoa.sexo}</p>
+          <p className="grid justify-items-left italic">CPF: {aluno.pessoa.cpf}</p>
+          <p className="grid justify-items-left italic">Endereço: {aluno.pessoa.endereco.rua}</p>
+          <p className="grid justify-items-left italic">Bairro: {aluno.pessoa.endereco.bairro}</p>
+        </div>
     </div>
   );
 };

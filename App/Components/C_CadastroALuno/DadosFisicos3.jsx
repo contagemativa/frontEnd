@@ -18,13 +18,10 @@ const DadosFisicos3 = () => {
 
   return (
     <div>
-      <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
-        Dados Físicos do Aluno
-      </p>
-
+      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Físicos do Aluno</p>
       <p className="grid justify-items">Toma Algum tipo de Medicamento?</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <label className="flex items-center gap-2">
+        <label className="flex items-center gap-2 my-2">
           <input
             type="radio"
             name="tomaMedicamento"
@@ -48,7 +45,7 @@ const DadosFisicos3 = () => {
         </label>
       </div>
       {aluno.medicamentos?.tomaMedicamento === "Sim" && (
-        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label className="block text-sm font-medium text-gray-900 my-2">
           Caso sim, Especifique:
           <textarea
             name="especificacaoMedicamentos"

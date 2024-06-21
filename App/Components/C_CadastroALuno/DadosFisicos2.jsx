@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AlunoContext } from "../../Models/Class/alunoClass";
 
 const DadosFisicos2 = () => {
   const { aluno, setAluno } = useContext(AlunoContext);
+  const [possuiProblema, setPossuiProblema] = useState(aluno.fichaMedica?.problemaDeSaude ? "Sim" : "Não");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,12 +12,23 @@ const DadosFisicos2 = () => {
       ...prevAluno,
       fichaMedica: {
         ...prevAluno.fichaMedica,
-        problemaDeSaude: {
-          ...prevAluno.fichaMedica.problemaDeSaude,
-          [name]: value
-        }
+        [name]: value
       }
     }));
+  };
+
+  const handleRadioChange = (e) => {
+    const { value } = e.target;
+    setPossuiProblema(value);
+    if (value === "Não") {
+      setAluno((prevAluno) => ({
+        ...prevAluno,
+        fichaMedica: {
+          ...prevAluno.fichaMedica,
+          problemaDeSaude: ""
+        }
+      }));
+    }
   };
 
   return (
@@ -29,8 +41,8 @@ const DadosFisicos2 = () => {
             type="radio"
             name="possuiProblema"
             value="Sim"
-            checked={aluno.fichaMedica.problemaDeSaude?.possuiProblema === "Sim"}
-            onChange={handleChange}
+            checked={possuiProblema === "Sim"}
+            onChange={handleRadioChange}
             className="radio"
           />
           <span>Sim</span>
@@ -40,19 +52,19 @@ const DadosFisicos2 = () => {
             type="radio"
             name="possuiProblema"
             value="Não"
-            checked={aluno.fichaMedica.problemaDeSaude?.possuiProblema === "Não"}
-            onChange={handleChange}
+            checked={possuiProblema === "Não"}
+            onChange={handleRadioChange}
             className="radio"
           />
           <span>Não</span>
         </label>
       </div>
-      {aluno.fichaMedica.problemaDeSaude?.possuiProblema === "Sim" && (
-        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+      {possuiProblema === "Sim" && (
+        <label className="block text-sm font-medium text-gray-900 my-2">
           Caso sim, Especifique:
           <textarea
-            name="especificacao"
-            value={aluno.fichaMedica.problemaDeSaude?.especificacao || ""}
+            name="problemaDeSaude"
+            value={aluno.fichaMedica.problemaDeSaude || ""}
             onChange={handleChange}
             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Especifique aqui..."
