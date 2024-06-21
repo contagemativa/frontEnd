@@ -24,7 +24,7 @@ export async function handleLoginClick(usuario, senha, navigate, setError) {
         const usuarioLogado = new Usuario(pessoa.id, pessoa.nome, pessoa.usuario);
         salvarUsuario(usuarioLogado);
 
-        navigate("/home");
+        navigate("/Home");
         toast.clearWaitingQueue();
       }
 
