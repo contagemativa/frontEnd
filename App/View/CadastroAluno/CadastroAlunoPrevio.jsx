@@ -9,7 +9,7 @@ import Endereco from '../../Components/C_CadastroALuno/CadastroPrevio/Endereco.j
 import NucleoDeOrigem from '../../Components/C_CadastroALuno/CadastroPrevio/NucleoDeOrigem.jsx';
 import FinalizaCadastroAluno from '../../Controllers/CadastroPrevio/finalizaCadastroAlunoController.js';
 import useForm from '../../Hooks/useForm.jsx';
-import { FormContext, FormProvider } from '../../Models/Class/alunoPrevioClass.js';
+import { FormContext, FormProvider } from '../../Models/Class/alunoClass.js';
 
 const formComponents = [
     <InformacoesGerais />,

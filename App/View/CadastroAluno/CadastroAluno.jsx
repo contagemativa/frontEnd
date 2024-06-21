@@ -22,6 +22,8 @@ import FinalizaCadastroAluno from "../../Components/C_CadastroALuno/FinalizaCada
 
 // Import Hooks
 import useForm from "../../Hooks/useForm.jsx"
+import MediaQuery from "react-responsive";
+import { AlunoProvider } from "../../Models/Class/alunoClass.js";
 
 const formComponents = [
     <InformacoesGerais />,
@@ -74,38 +76,63 @@ export default function CadastroAluno() {
     return (
         <>
             <MainFrame>
-                <div className="my-4"> 
-                    <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
-                        Cadastro Aluno
-                    </p>
-                </div>
-                <div className="flex justify-center gap-12 my-4">
-                    <div className="flex justify-start h-fit p-4">
-                        <ul className={`w-64 steps steps-vertical ${currentStep >= 14 ? 'step-accent' : ''}`}>
-                            <li className={`step ${currentStep >= 0 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep  === 0 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Informações Gerais</li>
-                            <li className={`step ${currentStep >= 1 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 1 && currentStep < 5 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Gerais</li>
-                            <li className={`step ${currentStep >= 5 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 5 && currentStep < 9 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Físicos</li>
-                            <li className={`step ${currentStep >= 9 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 9 && currentStep < 11 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Socioeconômicos</li>
-                            <li className={`step ${currentStep >= 11 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 11 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Questionário Prontidão</li>
-                            <li className={`step ${currentStep >= 14 ? 'step-accent text-accent font-bold text-lg' : ''}`}>Finalizar</li>
-                        </ul>
+                <AlunoProvider>
+                    <div className="my-4"> 
+                        <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
+                            Cadastro Aluno
+                        </p>
                     </div>
-                    <div className="w-1/2">
-                        <FlowButtons />
-                        <div className="card card-compact bg-base-100 drop-shadow-md h-fit">
-                            <div className="p-6">
-                                <div className="form-control my-4">  
-                                    <form>
-                                        {currentComponent}
-                                    </form>                            
-                                </div>
-                                <div className="flex justify-end">
-                                    <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
+                    <div className="flex justify-center gap-12 my-4">
+                        <MediaQuery minWidth={800}>
+                            <div className="flex justify-start h-fit p-4">
+                                <ul className={`w-64 steps steps-vertical ${currentStep >= 14 ? 'step-accent' : ''}`}>
+                                    <li className={`step ${currentStep >= 0 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep  === 0 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Informações Gerais</li>
+                                    <li className={`step ${currentStep >= 1 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 1 && currentStep < 5 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Gerais</li>
+                                    <li className={`step ${currentStep >= 5 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 5 && currentStep < 9 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Físicos</li>
+                                    <li className={`step ${currentStep >= 9 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 9 && currentStep < 11 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Socioeconômicos</li>
+                                    <li className={`step ${currentStep >= 11 ? (currentStep >= 14 ? 'step-accent' : `step-primary ${currentStep >= 11 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Questionário Prontidão</li>
+                                    <li className={`step ${currentStep >= 14 ? 'step-accent text-accent font-bold text-lg' : ''}`}>Finalizar</li>
+                                </ul>
+                            </div>
+                        </MediaQuery>      
+
+                        <MediaQuery minWidth={800}>
+                            <div className="w-1/2">
+                                <FlowButtons />
+                                <div className="card card-compact bg-base-100 drop-shadow-md h-fit">
+                                    <div className="p-6">
+                                        <div className="form-control my-4">  
+                                            <form>
+                                                {currentComponent}
+                                            </form>                            
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </MediaQuery>   
+
+                        <MediaQuery maxWidth={799}>
+                            <div className="w-full">
+                                <FlowButtons />
+                                <div className="card card-compact bg-base-100 drop-shadow-md h-fit">
+                                    <div className="p-6">
+                                        <div className="form-control my-4">  
+                                            <form>
+                                                {currentComponent}
+                                            </form>                            
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </MediaQuery>
                     </div>
-                </div>
+                </AlunoProvider>
             </MainFrame>
         </>
     );

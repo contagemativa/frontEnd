@@ -1,38 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AlunoContext } from "../../Models/Class/alunoClass";
 
 const DadosFisicos4 = () => {
-    return (
-        <div>
-            <p className="grid text-3xl font-bold text-pink-500 justify-items-center">
-                Dados Fisicos do Aluno
-            </p>
+  const { aluno } = useContext(AlunoContext);
+  console.log(aluno);
 
-            <p className="grid  justify-items">Tamanho da Camisa Adulto:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label className="flex items-center gap-2">
-                    <input type="radio" name="radio-1" className="radio" checked />
-                    <span>PP</span>
-                </label>
-                <label className="flex items-center gap-2">
-                    <input type="radio" name="radio-1" className="radio" checked />
-                    <span>P</span>
-                </label>
-                <label className="flex items-center gap-2">
-                    <input type="radio" name="radio-1" className="radio" checked />
-                    <span>M</span>
-                </label>
-                <label className="flex items-center gap-2">
-                    <input type="radio" name="radio-1" className="radio" checked />
-                    <span>G</span>
-                </label>
-                <label className="flex items-center gap-2">
-                    <input type="radio" name="radio-1" className="radio" checked />
-                    <span>GG</span>
-                </label>
-            </div>
-        </div>
+  const handleConfirmarCadastro = () => {
+    // Aqui você pode chamar um controller para cadastro do aluno
+    // Exemplo simplificado de como poderia ser:
+    console.log("Dados do aluno a serem cadastrados:", aluno);
+    alert("Cadastro do aluno confirmado!"); // Exemplo de alerta, substitua por sua lógica real
+  };
 
-    )
-}
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={handleConfirmarCadastro}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+      >
+        Confirmar Cadastro
+      </button>
+    </div>
+  );
+};
 
-export default DadosFisicos4
+export default DadosFisicos4;
