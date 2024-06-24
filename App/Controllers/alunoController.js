@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { getAllAlunos } from "../Models/alunoModel";
+import { getAllAlunos, postAluno } from "../Models/alunoModel";
 
 export async function fetchAlunos() {
   try {
@@ -11,9 +11,9 @@ export async function fetchAlunos() {
   }
 }
 
-export async function postAluno(aluno){
+export async function cadastrarAluno(aluno){
   try{
-    const result = await cadastrarAluno(aluno);
+    const result = await postAluno(aluno);
     if(result.status === 200){
       toast.success(`Cadastro do aluno confirmado!`);
     }

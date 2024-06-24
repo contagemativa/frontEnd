@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { AlunoContext } from "../../Models/Class/alunoClass";
 import Button from "../Common/Button/Button";
-import { postAluno } from "../../Controllers/alunoController";
-import { toast } from "react-toastify";
+import { cadastrarAluno } from "../../Controllers/alunoController";
 
 const FinalizaCadastroAluno = () => {
   const { aluno } = useContext(AlunoContext);
@@ -10,7 +9,7 @@ const FinalizaCadastroAluno = () => {
 
   const handleConfirmarCadastro = async (e) => {
     try{
-      await postAluno(aluno);
+      await cadastrarAluno(aluno);
     }
     catch(erro){
       console.log("Erro ao cadastrar aluno:", erro)
