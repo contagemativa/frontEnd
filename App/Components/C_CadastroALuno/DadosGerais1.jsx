@@ -52,7 +52,7 @@ const DadosGerais = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">
+      <p className="grid text-2xl font-bold text-primary justify-items-left">
         Dados Gerais do Aluno
       </p>
       <label className="form-control w-full my-2">

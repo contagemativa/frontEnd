@@ -18,7 +18,7 @@ const DadosFisicos1 = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Físicos do Aluno</p>
+      <p className="grid text-2xl font-bold text-primary justify-items-left">Dados Físicos do Aluno</p>
 
       <p className="grid justify-items-left my-2">Possui Alguma Deficiência?
         <p className="text-sm text-gray-400 italic">Caso não, marque 'Não Possui'</p>

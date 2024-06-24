@@ -19,7 +19,7 @@ const DadosSocioeconomicos2 = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Socioeconômicos do Aluno</p>
+      <p className="grid text-2xl font-bold text-primary justify-items-left">Dados Socioeconômicos do Aluno</p>
       <p className="grid justify-items">Selecione a Renda Familiar:</p>
       <div className="flex flex-col gap-6 my-2">
         <label className="flex items-center gap-2">

@@ -33,7 +33,7 @@ const QuestionarioProntidao = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Questionário de Prontidão para Atividades Físicas</p>
+      <p className="grid text-2xl font-bold text-primary justify-items-left">Questionário de Prontidão para Atividades Físicas</p>
       {perguntas.map((pergunta) => (
         <div key={pergunta.name}>
           <p className="grid justify-items">{pergunta.texto}</p>

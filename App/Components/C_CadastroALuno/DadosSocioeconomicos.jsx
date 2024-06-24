@@ -17,7 +17,7 @@ const DadosSocioeconomicos = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Socioeconômicos do Aluno</p>
+      <p className="grid text-2xl font-bold text-primary justify-items-left">Dados Socioeconômicos do Aluno</p>
       <label className="form-control w-full">
         <div className="label">
           <span className="label-text">Nº Total de Pessoas que residem no domicílio:</span>

@@ -106,9 +106,11 @@ export default function CadastroAluno() {
                                                 {currentComponent}
                                             </form>                            
                                         </div>
-                                        <div className="flex justify-end">
-                                            <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
-                                        </div>
+                                        {currentStep < 14 ? 
+                                            <div className="flex justify-end">
+                                                <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
+                                            </div> :null
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -124,9 +126,11 @@ export default function CadastroAluno() {
                                                 {currentComponent}
                                             </form>                            
                                         </div>
-                                        <div className="flex justify-end">
-                                            <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
-                                        </div>
+                                        {currentStep < 14 ? 
+                                            <div className="flex justify-end">
+                                                <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
+                                            </div> :null
+                                        }
                                     </div>
                                 </div>
                             </div>

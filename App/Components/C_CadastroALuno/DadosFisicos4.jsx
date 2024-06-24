@@ -15,7 +15,7 @@ const DadosFisicos4 = () => {
 
   return (
     <div>
-      <p className="grid text-2xl font-bold text-pink-500 justify-items-left">Dados Físicos do Aluno</p>
+      <p className="grid text-2xl font-bold text-primary justify-items-left">Dados Físicos do Aluno</p>
       <p className="grid justify-items">Tamanho da Camisa Adulto:</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-2">
         <label className="flex items-center gap-2">
