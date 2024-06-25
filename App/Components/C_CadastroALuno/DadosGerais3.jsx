@@ -4,36 +4,19 @@ import { AlunoContext } from "../../Models/Class/alunoClass";
 const DadosGerais3 = () => {
   const { aluno, setAluno } = useContext(AlunoContext);
 
-  // Estado local para armazenar os valores dos campos de entrada
-  const [formData, setFormData] = useState({
-    rg: aluno.identidade.rg || '',
-    orgaoExpedidor: aluno.identidade.orgaoExpedidor || '',
-    dataEmissao: aluno.identidade.dataEmissao || '',
-    cpf: aluno.pessoa.cpf || ''
-  });
-
-  // Função para lidar com a mudança nos campos de entrada
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    console.log(aluno)
-    // Atualiza o estado local com os novos valores do campo de entrada
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-    // Atualiza o contexto AlunoContext com os novos dados
-    setAluno((prevAluno) => ({
-      ...prevAluno,
-      identidade: {
-        ...prevAluno.identidade,
-        [name]: value
-      },
-      pessoa: {
-        ...prevAluno.pessoa,
-        cpf: formData.cpf // Apenas atualiza o CPF no contexto AlunoContext
+    const keys = name.split('.');
+    console.log(aluno);
+    setAluno((prevAluno) => {
+      let updatedAluno = { ...prevAluno };
+      let currentLevel = updatedAluno;
+      for (let i = 0; i < keys.length - 1; i++) {
+        currentLevel = currentLevel[keys[i]];
       }
-    }));
+      currentLevel[keys[keys.length - 1]] = value;
+      return updatedAluno;
+    });
   };
 
   return (
@@ -47,8 +30,8 @@ const DadosGerais3 = () => {
         </div>
         <input
           type="text"
-          name="rg"
-          value={formData.rg}
+          name="identidade.rg"
+          value={aluno.identidade.rg}
           onChange={handleChange}
           placeholder="RG do Aluno"
           className="input input-bordered w-full max-w-xs"
@@ -60,8 +43,8 @@ const DadosGerais3 = () => {
         </div>
         <input
           type="text"
-          name="orgaoExpedidor"
-          value={formData.orgaoExpedidor}
+          name="identidade.orgaoExpedidor"
+          value={aluno.identidade.orgaoExpedidor}
           onChange={handleChange}
           placeholder="Orgão Expedidor"
           className="input input-bordered w-full max-w-xs"
@@ -73,8 +56,8 @@ const DadosGerais3 = () => {
         </div>
         <input
           type="date"
-          name="dataEmissao"
-          value={formData.dataEmissao}
+          name="identidade.dataEmissao"
+          value={aluno.identidade.dataEmissao}
           onChange={handleChange}
           placeholder="Data de Emissão"
           className="input input-bordered w-full max-w-xs"
@@ -86,8 +69,8 @@ const DadosGerais3 = () => {
         </div>
         <input
           type="text"
-          name="cpf"
-          value={formData.cpf}
+          name="pessoa.cpf"
+          value={aluno.pessoa.cpf}
           onChange={handleChange}
           placeholder="CPF Aluno"
           className="input input-bordered w-full max-w-xs"

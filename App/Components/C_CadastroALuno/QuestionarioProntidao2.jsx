@@ -6,14 +6,21 @@ const QuestionarioProntidao = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const resposta = value === "true"; // Conversão explícita para booleano
+
     setAluno((prevAluno) => ({
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: value === "true" // Convertendo o valor para booleano
+        [name]: resposta
       }
     }));
-    console.log(aluno);
+
+    // Use console.log dentro do setAluno para ver o estado atualizado
+    setAluno((prevAluno) => {
+      console.log(prevAluno);
+      return prevAluno;
+    });
   };
 
   const perguntas = [

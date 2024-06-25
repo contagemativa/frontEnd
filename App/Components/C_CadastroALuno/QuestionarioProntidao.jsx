@@ -6,14 +6,15 @@ const QuestionarioProntidao = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const resposta = value === "true"; // Convertendo o valor para booleano
+
     setAluno((prevAluno) => ({
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: value === "true" // Convertendo o valor para booleano
+        [name]: resposta
       }
     }));
-    console.log(aluno);
   };
 
   const perguntas = [

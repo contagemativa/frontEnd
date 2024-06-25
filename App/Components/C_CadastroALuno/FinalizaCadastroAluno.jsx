@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
 import { AlunoContext } from "../../Models/Class/alunoClass";
 import Button from "../Common/Button/Button";
-import { cadastrarAluno } from "../../Controllers/alunoController";
+import { cadastrarAluno } from "../../Controllers/alunoController"; // Corrigir o nome da função importada
+import { toast } from "react-toastify";
 
 const FinalizaCadastroAluno = () => {
   const { aluno } = useContext(AlunoContext);
   console.log(aluno);
 
   const handleConfirmarCadastro = async (e) => {
-    try{
+    e.preventDefault();
+    try {
+      console.log(aluno);
       await cadastrarAluno(aluno);
-    }
-    catch(erro){
-      console.log("Erro ao cadastrar aluno:", erro)
+      toast.success("Aluno cadastrado com sucesso!");
+    } catch (erro) {
+      toast.error("Erro ao cadastrar aluno: " + erro.message);
     }
   };
 

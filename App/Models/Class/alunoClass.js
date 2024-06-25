@@ -5,8 +5,6 @@ export const AlunoContext = createContext();
 
 export const AlunoProvider = ({ children }) => {
 
-  const usuarioLogado = recuperarUsuario();
-
   const [aluno, setAluno] = useState({
     id: 0,
     pessoa: {
@@ -32,7 +30,7 @@ export const AlunoProvider = ({ children }) => {
       senha: ''
     },
     nucleoDeOrigem: 0,
-    cadastradoPor: usuarioLogado.id,
+    cadastradoPor: 0,
     tamanhoCamisa: '',
     fichaMedica: {
       id: 0,
@@ -64,6 +62,11 @@ export const AlunoProvider = ({ children }) => {
       rg: '',
       orgaoExpedidor: '',
       dataEmissao: ''
+    },
+    medicamento:{
+      id: 0,
+      nome:'',
+      via:'',
     }
   });
 
