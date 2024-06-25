@@ -1,6 +1,4 @@
 import config from "../config";
-import { recuperarUsuario } from "./Class/usuarioClass";
-const usuarioLogado = recuperarUsuario();
 
 export async function getAllAlunos() {
     const response = await fetch(`${config.apiUrl}/aluno`, {
@@ -32,10 +30,8 @@ export async function getAllAlunos() {
           body: JSON.stringify(aluno.pessoa.endereco),
         }
       );
-  
       const enderecoData = await enderecoResponse.json();
-      console.log(enderecoData);
-    
+  
       // Enviar dados da Pessoa
       const pessoaResponse = await fetch(`${config.apiUrl}/pessoa/cadastrar`, {
         method: "POST",
@@ -52,14 +48,11 @@ export async function getAllAlunos() {
           corRaca: aluno.pessoa.corRaca,
           endereco: enderecoData.id,
           usuario: aluno.pessoa.usuario,
-          senha: aluno.pessoa.senha
+          senha: aluno.pessoa.senha,
         }),
       });
-    
       const pessoaData = await pessoaResponse.json();
-      console.log(pessoaData);
-
-      // Enviar dados da Identidade
+  
       const identidadeResponse = await fetch(
         `${config.apiUrl}/identidade/cadastrar`,
         {
@@ -71,16 +64,13 @@ export async function getAllAlunos() {
             id: aluno.identidade.id,
             pessoa: pessoaData.id,
             rg: aluno.identidade.rg,
-            orgaoExpedidor: aluno.identidade.orgaoExpedidor,
-            dataEmissao: aluno.identidade.dataEmissao,
+            orgaoExpedidor: aluno.pessoa.orgaoExpedidor,
+            dataEmissao: aluno.pessoa.dataEmissao,
           }),
         }
       );
-  
       const identidadeData = await identidadeResponse.json();
-      console.log(identidadeData);
-    
-      // Enviar dados da Ficha Médica
+  
       const fichaMedicaResponse = await fetch(
         `${config.apiUrl}/fichaMedica/cadastrar`,
         {
@@ -96,10 +86,8 @@ export async function getAllAlunos() {
           }),
         }
       );
-  
       const fichaMedicaData = await fichaMedicaResponse.json();
-      console.log(fichaMedicaData);
-    
+  
       // Enviar dados do Aluno
       const alunoResponse = await fetch(
         `${config.apiUrl}/aluno/cadastrar`,
@@ -111,19 +99,16 @@ export async function getAllAlunos() {
           body: JSON.stringify({
             id: aluno.id,
             pessoa: pessoaData.id,
-            nucleoDeOrigem: aluno.nucleoDeOrigem.id,
-            cadastradoPor: usuarioLogado.id,
+            nucleoDeOrigem: aluno.nucleoDeOrigem,
+            cadastradoPor: aluno.cadastradoPor,
             tamanhoCamisa: aluno.tamanhoCamisa,
           }),
         }
       );
-  
       const alunoData = await alunoResponse.json();
-      console.log(alunoData);
-    
-      // Enviar dados das Condições Sociais
+  
       const condicoesSociaisResponse = await fetch(
-        `${config.apiUrl}/condicoesSociais/cadastrar`,
+        `${config.apiUrl}/questionario/cadastrar`,
         {
           method: "POST",
           headers: {
@@ -132,19 +117,17 @@ export async function getAllAlunos() {
           body: JSON.stringify({
             aluno: alunoData.id,
             pessoasNoDomicilio: aluno.condicoesSociais.pessoasNoDomicilio,
-            responsavelPeloSustento: aluno.condicoesSociais.responsavelPeloSustento,
+            responsavelPeloSustento:
+            aluno.condicoesSociais.responsavelPeloSustento,
             rendaFamiliar: aluno.condicoesSociais.rendaFamiliar,
             programaDoGoverno: aluno.condicoesSociais.programaDoGoverno,
           }),
         }
       );
-  
       const condicoesSociaisData = await condicoesSociaisResponse.json();
-      console.log(condicoesSociaisData);
-    
-      // Enviar dados do Questionário de Prontidão
+  
       const questionarioProntidaoResponse = await fetch(
-        `${config.apiUrl}/questionario/cadastrar`,
+        `${config.apiUrl}/endereco/cadastrar`,
         {
           method: "POST",
           headers: {
@@ -163,17 +146,15 @@ export async function getAllAlunos() {
           }),
         }
       );
-  
       const questionarioProntidaoData = await questionarioProntidaoResponse.json();
-      console.log(questionarioProntidaoData);
   
       console.log("Aluno cadastrado com sucesso:", alunoData);
-      return alunoResponse; // Retornar a resposta completa para verificação do status
+      return alunoData;
     } catch (error) {
       console.error("Erro ao cadastrar aluno:", error);
       throw error; // Lançar o erro para tratamento externo
     }
-  }
+  };
   
   
   

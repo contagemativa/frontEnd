@@ -3,12 +3,12 @@ import MainFrame from "../../Components/Layout/Main/Main";
 import DataTable from "react-data-table-component";
 import Spinner from "../../Components/Common/Spinner/Spinner";
 import Button from "../../Components/Common/Button/Button";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrashAlt } from "react-icons/fa";
 import { fetchRegionais } from "../../Controllers/regionalController.js";
 import { toast } from "react-toastify";
 import config from "../../config.js";
 import MediaQuery from "react-responsive";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TableFilterRegional from "../../Components/Layout/Filter/TableFilterRegional.jsx";
 import TableFilterRegionalMobile from "../../Components/Layout/Filter/TableFilterRegionalMobile.jsx";
 
@@ -119,16 +119,23 @@ export default function ListaRegionais() {
             </MediaQuery>
 
             <MediaQuery minWidth={600} maxWidth={1023}>
-                <div className="flex justify-between items-center gap-1 my-2">
-                    <h1 className="text-3xl font-bold text-slate-700">Lista de Regionais</h1>
+                <div className="my-4">
+                    <h1 className="flex justify-center text-3xl font-bold text-slate-700 my-4">Lista de Regionais</h1>
                     <TableFilterRegionalMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData} />
                 </div>
             </MediaQuery>
 
             <MediaQuery minWidth={1024}>
-                <div className="gap-1 my-4">
+                <div className="flex justify-between gap-1 my-4 items-center">
                     <h1 className="text-3xl font-bold text-slate-700">Lista de Regionais</h1>
+                    <Link to={'/Cadastros/CadastroRegional'}>
+                        <button className="btn btn-secondary  px-4 text-white">
+                            <FaPlus size={20}/>
+                            Cadastrar Regional
+                        </button> 
+                    </Link>
                 </div>
+                <hr/>
                 <TableFilterRegional data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData} />
             </MediaQuery>
 

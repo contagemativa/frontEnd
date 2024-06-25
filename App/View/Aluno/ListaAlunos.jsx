@@ -3,7 +3,7 @@ import MainFrame from "../../Components/Layout/Main/Main";
 import DataTable from "react-data-table-component";
 import Spinner from "../../Components/Common/Spinner/Spinner";
 import Button from "../../Components/Common/Button/Button";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrashAlt } from "react-icons/fa";
 import TableFilterAluno from "../../Components/Layout/Filter/TableFilterAluno.jsx";
 import { fetchAlunos } from "../../Controllers/alunoController.js";
 import { fetchPessoas } from "../../Controllers/pessoaController.js";
@@ -14,7 +14,7 @@ import config from "../../config.js";
 import MediaQuery from "react-responsive";
 import TableFilterAlunoMobile from "../../Components/Layout/Filter/TableFilterAlunoMobile.jsx";
 import ReactModal from "react-modal";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ListaAlunos() {
 
@@ -177,16 +177,23 @@ export default function ListaAlunos() {
             </MediaQuery>
 
             <MediaQuery minWidth={600} maxWidth={1023}>
-                <div className="flex justify-between items-center gap-1 my-2">
-                    <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
+                <div className="my-4">
+                    <h1 className="flex justify-center text-3xl font-bold text-slate-700 my-4">Lista de Alunos</h1>
                     <TableFilterAlunoMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
                 </div>
             </MediaQuery>
 
             <MediaQuery minWidth={1024}>
-                <div className="gap-1 my-4">
+                <div className="flex justify-between gap-1 my-4 items-center">
                     <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
+                    <Link to={"/Cadastros/CadastroAluno"}>
+                        <button className="btn btn-secondary text-white">
+                            <FaPlus size={20}/>
+                            Cadastrar Aluno
+                        </button> 
+                    </Link>
                 </div>
+                <hr />
                 <TableFilterAluno data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
             </MediaQuery>
 

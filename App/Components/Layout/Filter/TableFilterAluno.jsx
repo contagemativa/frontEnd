@@ -66,14 +66,14 @@ export default function TableFilterAluno({ data, onFilter, onClearFilters, onUpd
                 </div>
             </div>
             <div className="flex gap-2 items-end h-full">
-                  <button className="btn btn-warning bg-opacity-70 px-4 text-neutral" onClick={handleClearFilters}>
-                      <LuFilterX size={20}/>
-                      Limpar Filtro
-                  </button>
-                  <button className="btn btn-accent px-4 text-white" onClick={onUpdate}>
-                      <RxUpdate size={20}/>
-                      Atualizar
-                  </button>
+                <button className="btn btn-warning px-4 text-neutral" onClick={handleClearFilters}>
+                    <LuFilterX size={20}/>
+                    Limpar Filtro
+                </button>
+                <button className="btn btn-accent px-4 text-white" onClick={onUpdate}>
+                    <RxUpdate size={20}/>
+                    Atualizar
+                </button>
             </div>
         </div>
       </div>

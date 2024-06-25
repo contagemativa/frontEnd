@@ -4,9 +4,10 @@ import { RxUpdate } from "react-icons/rx";
 import { LuFilterX } from "react-icons/lu";
 import { useState } from "react";
 import MediaQuery from "react-responsive";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaPlus } from "react-icons/fa";
 import { MdFilterAltOff } from "react-icons/md";
 import { FiFilter } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function TableFilterRegionalMobile({ data, onFilter, onClearFilters, onUpdate}) {
   const [filterRegional, setFilterRegional] = useState("");
@@ -34,28 +35,37 @@ export default function TableFilterRegionalMobile({ data, onFilter, onClearFilte
   return (
     <>
       <MediaQuery maxWidth={599}>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2">
           <button className="btn btn-warning text-neutral" onClick={()=>document.getElementById('my_modal_1').showModal()}>
             <FiFilter size={20}/>
-            Filtro
           </button>
           <button className="btn btn-accent text-white" onClick={onUpdate}>
             <RxUpdate size={20}/>
-            Atualizar
           </button>
+          <Link to={'/Cadastros/CadastroRegional'}>
+            <button className="btn btn-secondary text-white w-full">
+                <FaPlus size={20}/>
+            </button> 
+          </Link>
         </div>
       </MediaQuery>
 
-      <MediaQuery minWidth={600}>
-        <div className="flex text-sm gap-2">
-          <button className="btn btn-warning text-neutral" onClick={()=>document.getElementById('my_modal_1').showModal()}>
-            <FiFilter size={20}/>
-            Filtro
-          </button>
-          <button className="btn btn-accent text-white" onClick={onUpdate}>
-            <RxUpdate size={20}/>
-            Atualizar
-          </button>
+      <MediaQuery minWidth={600} maxWidth={1023}>
+        <div className="grid grid-cols-3 gap-2">
+            <button className="btn btn-warning text-neutral" onClick={()=>document.getElementById('my_modal_1').showModal()}>
+              <FiFilter size={20}/>
+              Filtro
+            </button>
+            <button className="btn btn-accent text-white" onClick={onUpdate}>
+              <RxUpdate size={20}/>
+              Atualizar
+            </button>
+            <Link to={'/Cadastros/CadastroRegional'}>
+              <button className="btn btn-secondary text-white w-full">
+                  <FaPlus size={20}/>
+                  Cadastrar Regional
+              </button> 
+            </Link>
         </div>
       </MediaQuery>
 

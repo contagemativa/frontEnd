@@ -4,6 +4,8 @@ import { RxUpdate } from "react-icons/rx";
 import { LuFilterX } from "react-icons/lu";
 import { useState } from "react";
 import MediaQuery from "react-responsive";
+import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function TableFilterRegional({ data, onFilter, onClearFilters, onUpdate}) {
   const [filterRegional, setFilterRegional] = useState("");
