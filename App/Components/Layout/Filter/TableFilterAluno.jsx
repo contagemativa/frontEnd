@@ -5,7 +5,7 @@ import { LuFilterX } from "react-icons/lu";
 import { useState } from "react";
 import MediaQuery from "react-responsive";
 
-export default function TableFilter({ data, onFilter, onClearFilters, onUpdate}) {
+export default function TableFilterAluno({ data, onFilter, onClearFilters, onUpdate}) {
   const [filterNomeAluno, setFilterNomeAluno] = useState("");
   const [filterNucleo, setFilterNucleo] = useState("");
   const [filterRegional, setFilterRegional] = useState("");

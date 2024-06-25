@@ -13,7 +13,6 @@ const FinalizaCadastroAluno = () => {
     try {
       console.log(aluno);
       await cadastrarAluno(aluno);
-      toast.success("Aluno cadastrado com sucesso!");
     } catch (erro) {
       toast.error("Erro ao cadastrar aluno: " + erro.message);
     }

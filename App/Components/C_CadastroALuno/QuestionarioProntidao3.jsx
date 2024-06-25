@@ -6,21 +6,18 @@ const QuestionarioProntidao3 = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const resposta = value === "true"; // Conversão explícita para booleano
 
     setAluno((prevAluno) => ({
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: resposta
+        [name]: value 
       }
     }));
 
-    // Use console.log dentro do setAluno para ver o estado atualizado
-    setAluno((prevAluno) => {
-      console.log(prevAluno);
-      return prevAluno;
-    });
+    setTimeout(() => {
+      console.log(aluno);
+    }, 100);
   };
 
   return (
@@ -35,7 +32,7 @@ const QuestionarioProntidao3 = () => {
             type="radio"
             name="quest7"
             value="true"
-            checked={aluno.questionarioProntidao.quest7 === true}
+            checked={aluno.questionarioProntidao.quest7 === "true"}
             onChange={handleChange}
             className="radio"
           />
@@ -46,7 +43,7 @@ const QuestionarioProntidao3 = () => {
             type="radio"
             name="quest7"
             value="false"
-            checked={aluno.questionarioProntidao.quest7 === false}
+            checked={aluno.questionarioProntidao.quest7 === "false"}
             onChange={handleChange}
             className="radio"
           />

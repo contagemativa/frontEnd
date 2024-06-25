@@ -1,26 +1,24 @@
 import React, { useContext } from "react";
 import { AlunoContext } from "../../Models/Class/alunoClass";
 
-const QuestionarioProntidao = () => {
+const QuestionarioProntidao2 = () => {
   const { aluno, setAluno } = useContext(AlunoContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const resposta = value === "true"; // Conversão explícita para booleano
 
     setAluno((prevAluno) => ({
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: resposta
+        [name]: value // Armazenando a string "true" ou "false"
       }
     }));
 
-    // Use console.log dentro do setAluno para ver o estado atualizado
-    setAluno((prevAluno) => {
-      console.log(prevAluno);
-      return prevAluno;
-    });
+    // Debugging: Imprimir o estado atualizado do aluno
+    setTimeout(() => {
+      console.log(aluno);
+    }, 100);
   };
 
   const perguntas = [
@@ -50,7 +48,7 @@ const QuestionarioProntidao = () => {
                 type="radio"
                 name={pergunta.name}
                 value="true"
-                checked={aluno.questionarioProntidao[pergunta.name] === true}
+                checked={aluno.questionarioProntidao[pergunta.name] === "true"}
                 onChange={handleChange}
                 className="radio"
               />
@@ -61,7 +59,7 @@ const QuestionarioProntidao = () => {
                 type="radio"
                 name={pergunta.name}
                 value="false"
-                checked={aluno.questionarioProntidao[pergunta.name] === false}
+                checked={aluno.questionarioProntidao[pergunta.name] === "false"}
                 onChange={handleChange}
                 className="radio"
               />
@@ -74,4 +72,4 @@ const QuestionarioProntidao = () => {
   );
 };
 
-export default QuestionarioProntidao;
+export default QuestionarioProntidao2;

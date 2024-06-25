@@ -8,43 +8,25 @@ import { FaFilter } from "react-icons/fa";
 import { MdFilterAltOff } from "react-icons/md";
 import { FiFilter } from "react-icons/fi";
 
-export default function TableFilterMobile({ data, onFilter, onClearFilters, onUpdate}) {
-  const [filterNomeAluno, setFilterNomeAluno] = useState("");
-  const [filterNucleo, setFilterNucleo] = useState("");
+export default function TableFilterRegionalMobile({ data, onFilter, onClearFilters, onUpdate}) {
   const [filterRegional, setFilterRegional] = useState("");
-
-  const handleFilterNomeAluno = (e) => {
-    const value = e.target.value.toLowerCase();
-    setFilterNomeAluno(value);
-    applyFilters(value, filterNucleo, filterRegional);
-  };
-
-  const handleFilterNucleo = (e) => {
-    const value = e.target.value.toLowerCase();
-    setFilterNucleo(value);
-    applyFilters(filterNomeAluno, value, filterRegional);
-  };
 
   const handleFilterRegional = (e) => {
     const value = e.target.value.toLowerCase();
     setFilterRegional(value);
-    applyFilters(filterNomeAluno, filterNucleo, value);
+    applyFilters(value);
   };
 
-  const applyFilters = (aluno, nucleo, regional) => {
+  const applyFilters = (regional) => {
     const filteredList = data.filter((record) => {
       return (
-        record.pessoa.nome.toLowerCase().includes(aluno) &&
-        record.nucleo.nome.toLowerCase().includes(nucleo) &&
-        record.regional.nome.toLowerCase().includes(regional)
+        record.nome.toLowerCase().includes(regional)
       );
     });
     onFilter(filteredList);
   };
 
   const handleClearFilters = () => {
-    setFilterNomeAluno("");
-    setFilterNucleo("");
     setFilterRegional("");
     onClearFilters();
   };
@@ -86,14 +68,6 @@ export default function TableFilterMobile({ data, onFilter, onClearFilters, onUp
 
           
           <div className="items-center text-accent gap-2 text-md">
-              <div>
-                  <p><b>Aluno</b></p>
-                  <input type="text" className="input-bordered input-accent border w-full h-10 placeholder:text-sm placeholder:italic placeholder:text-slate-400 hover:border-accent my-1 rounded-md p-2" placeholder="Filtrar Nome do Aluno..." value={filterNomeAluno} onChange={handleFilterNomeAluno}/>
-              </div>
-              <div>
-                  <p><b>Núcleo</b></p>
-                  <input type="text" className="input-bordered input-accent border w-full h-10 placeholder:text-sm placeholder:italic placeholder:text-slate-400 hover:border-accent my-1 rounded-md p-2" placeholder="Filtrar Núcleo..." value={filterNucleo} onChange={handleFilterNucleo}/>
-              </div>
               <div>
                   <p><b>Regional</b></p>
                   <input type="text" className="input-bordered input-accent border w-full h-10 placeholder:text-sm placeholder:italic placeholder:text-slate-400 hover:border-accent my-1 rounded-md p-2" placeholder="Filtrar Regional..." value={filterRegional} onChange={handleFilterRegional}/>

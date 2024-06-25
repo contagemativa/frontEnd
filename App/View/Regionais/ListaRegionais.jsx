@@ -8,10 +8,9 @@ import { fetchRegionais } from "../../Controllers/regionalController.js";
 import { toast } from "react-toastify";
 import config from "../../config.js";
 import MediaQuery from "react-responsive";
-import ReactModal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import TableFilterRegional from "../../Components/Layout/Filter/TableFilterRegional.jsx";
-import TableFilterMobileR from "../../Components/Layout/Filter/TableFilterMobileR.jsx";
+import TableFilterRegionalMobile from "../../Components/Layout/Filter/TableFilterRegionalMobile.jsx";
 
 
 export default function ListaRegionais() {
@@ -115,14 +114,14 @@ export default function ListaRegionais() {
             <MediaQuery maxWidth={599}>
                 <div className="my-4">
                     <h1 className="flex justify-center text-3xl font-bold text-slate-700 my-4">Lista de Regionais</h1>
-                    <TableFilterMobileR data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                    <TableFilterRegionalMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
                 </div>
             </MediaQuery>
 
             <MediaQuery minWidth={600} maxWidth={1023}>
                 <div className="flex justify-between items-center gap-1 my-2">
                     <h1 className="text-3xl font-bold text-slate-700">Lista de Regionais</h1>
-                    <TableFilterMobileR data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData} />
+                    <TableFilterRegionalMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData} />
                 </div>
             </MediaQuery>
 

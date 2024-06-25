@@ -4,7 +4,7 @@ import DataTable from "react-data-table-component";
 import Spinner from "../../Components/Common/Spinner/Spinner";
 import Button from "../../Components/Common/Button/Button";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import TableFilter from "../../Components/Layout/Filter/TableFIlter.jsx";
+import TableFilterAluno from "../../Components/Layout/Filter/TableFilterAluno.jsx";
 import { fetchAlunos } from "../../Controllers/alunoController.js";
 import { fetchPessoas } from "../../Controllers/pessoaController.js";
 import { fetchNucleos } from "../../Controllers/nucleoController.js";
@@ -12,7 +12,7 @@ import { fetchRegionais } from "../../Controllers/regionalController.js";
 import { toast } from "react-toastify";
 import config from "../../config.js";
 import MediaQuery from "react-responsive";
-import TableFilterMobile from "../../Components/Layout/Filter/TableFilterMobile.jsx";
+import TableFilterAlunoMobile from "../../Components/Layout/Filter/TableFilterAlunoMobile.jsx";
 import ReactModal from "react-modal";
 import { useNavigate } from "react-router-dom";
 
@@ -172,14 +172,14 @@ export default function ListaAlunos() {
             <MediaQuery maxWidth={599}>
                 <div className="my-4">
                     <h1 className="flex justify-center text-3xl font-bold text-slate-700 my-4">Lista de Alunos</h1>
-                    <TableFilterMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                    <TableFilterAlunoMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
                 </div>
             </MediaQuery>
 
             <MediaQuery minWidth={600} maxWidth={1023}>
                 <div className="flex justify-between items-center gap-1 my-2">
                     <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
-                    <TableFilterMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                    <TableFilterAlunoMobile data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
                 </div>
             </MediaQuery>
 
@@ -187,7 +187,7 @@ export default function ListaAlunos() {
                 <div className="gap-1 my-4">
                     <h1 className="text-3xl font-bold text-slate-700">Lista de Alunos</h1>
                 </div>
-                <TableFilter data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
+                <TableFilterAluno data={dataContentTable} onFilter={handleFilter} onClearFilters={handleClearFilters} onUpdate={updateData}/>
             </MediaQuery>
 
             <div className="rounded-xl">
