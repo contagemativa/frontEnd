@@ -10,6 +10,7 @@ import ListaAlunos from "../View/Aluno/ListaAlunos";
 import Cadastros from "../View/Cadastro/Cadastro";
 import CadastroNucleo from "../View/CadastroNucleo/CadastroNucleo";
 import Regionais from "../View/Regionais/ListaRegionais";
+import CadastroFuncionario from "../View/CadastroFuncionario/CadastroFuncionario";
 
 export default function App() {
   return (
@@ -23,9 +24,10 @@ export default function App() {
         <Route path="/Regionais" element={<Regionais/>} /> 
         <Route path="/Cadastros" element={<Cadastros/>} /> 
         <Route path="/ConfigAluno" element={<ConfigAluno/>}/>
-        <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno/>}/>
         <Route path="/Cadastros/CadastroRegional" element={<CadastroRegional/>}/>
         <Route path="/Cadastros/CadastroNucleo" element={<CadastroNucleo/>}/>
+        <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno/>}/>
+        <Route path="/Cadastros/CadastroFuncionario" element={<CadastroFuncionario/>}/>      
       </Routes>
     </>
   );
