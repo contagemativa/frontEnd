@@ -11,7 +11,6 @@ export default function Finalizar() {
   const handleConfirmarCadastro = async (e) => {
     e.preventDefault();
     try {
-      console.log(funcionario);
       await cadastrarFuncionario(funcionario);
     } catch (erro) {
       toast.error("Erro ao cadastrar funcionário: " + erro.message);
