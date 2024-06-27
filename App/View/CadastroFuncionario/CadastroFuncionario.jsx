@@ -7,9 +7,15 @@ import DadosGerais from "./C_CadastroFuncionario/DadosGerais.jsx";
 import useForm from "../../Hooks/useForm.jsx"
 import MediaQuery from "react-responsive";
 import { FuncionarioProvider } from "../../Models/Class/funcionarioClass.js";
+import Endereco from "./C_CadastroFuncionario/Endereco.jsx";
+import UsuarioSenha from "./C_CadastroFuncionario/UsuarioSenha.jsx";
+import Finalizar from "./C_CadastroFuncionario/Finalizar.jsx";
 
 const formComponents = [
     <DadosGerais />,
+    <Endereco/>,
+    <UsuarioSenha/>,
+    <Finalizar/>
 ];
 
 export default function CadastroFuncionario() {
@@ -48,16 +54,17 @@ export default function CadastroFuncionario() {
                 <FuncionarioProvider>
                     <div className="my-4"> 
                         <p className="grid text-3xl font-bold text-slate-700 justify-items-center">
-                            Cadastro de Funcinário
+                            Cadastro de Funcionário
                         </p>
                     </div>
                     <div className="flex justify-center gap-12 my-4">
                         <MediaQuery minWidth={800}>
                             <div className="flex justify-start h-fit p-4">
-                                <ul className={`w-64 steps steps-vertical ${currentStep >= 4 ? 'step-accent' : ''}`}>
-                                    <li className={`step ${currentStep >= 0 ? (currentStep >= 4 ? 'step-accent' : `step-primary ${currentStep === 0 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Gerais</li>
-                                    <li className={`step ${currentStep >= 1 ? (currentStep >= 4 ? 'step-accent' : `step-primary ${currentStep === 1 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Endereço</li>
-                                    <li className={`step ${currentStep >= 1 ? (currentStep >= 4 ? 'step-accent' : `step-primary ${currentStep === 3 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Usuário e Senha</li>
+                                <ul className={`w-64 steps steps-vertical ${currentStep >= 3 ? 'step-accent' : ''}`}>
+                                    <li className={`step ${currentStep >= 0 ? (currentStep >= 3 ? 'step-accent' : `step-primary ${currentStep === 0 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Dados Gerais</li>
+                                    <li className={`step ${currentStep >= 1 ? (currentStep >= 3 ? 'step-accent' : `step-primary ${currentStep === 1 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Endereço</li>
+                                    <li className={`step ${currentStep >= 2 ? (currentStep >= 3 ? 'step-accent' : `step-primary ${currentStep === 2 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Usuário e Senha</li>
+                                    <li className={`step ${currentStep >= 3 ? (currentStep >= 3 ? 'step-accent' : `step-primary ${currentStep === 3 ? 'text-lg font-bold text-primary' : ''}`) : ''}`}>Finalizar</li>
                                 </ul>
                             </div>
                         </MediaQuery>      
@@ -72,7 +79,7 @@ export default function CadastroFuncionario() {
                                                 {currentComponent}
                                             </form>                            
                                         </div>
-                                        {currentStep < 14 ? 
+                                        {currentStep < 3 ? 
                                             <div className="flex justify-end">
                                                 <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
                                             </div> :null
@@ -92,7 +99,7 @@ export default function CadastroFuncionario() {
                                                 {currentComponent}
                                             </form>                            
                                         </div>
-                                        {currentStep < 14 ? 
+                                        {currentStep < 3 ? 
                                             <div className="flex justify-end">
                                                 <Button className="btn btn-primary justify-self-end text-white w-fit" buttonText="Confirmar" onClick={nextStep} />
                                             </div> :null

@@ -34,12 +34,16 @@ export async function getUniqueFuncionario() {
     }
   }
 
-export async function postFuncionario(funcionario) {
-  const response = await fetch(`${config.apiUrl}/cadastrar/funcionario`,{
+export async function postFuncionario(funcionarioId, pessoaId) {
+  const response = await fetch(`${config.apiUrl}/funcionario/cadastrar`,{
     method: "POST",
     headers:{
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      id: funcionarioId,
+      pessoa: pessoaId
+    }),
   });
 
   if (response.status === 200) {    

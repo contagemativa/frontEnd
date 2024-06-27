@@ -7,13 +7,23 @@ export async function postEndereco(endereco) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ endereco }),
+      body: JSON.stringify({
+        id: endereco.id,
+        cep: endereco.cep,
+        rua: endereco.rua,
+        numero: endereco.numero,
+        complemento: endereco.complemento,
+        bairro: endereco.bairro,
+        cidade: endereco.cidade,
+        estado: endereco.estado,
+        pais: endereco.pais
+      }),
     });
 
     if (response.ok) {
       return response.json();
     } else if (response.status === 404) {
-      return null; // Pode ser um valor apropriado para indicar que nada foi encontrado.
+      return null; 
     } else {
       throw new Error(`Erro ao cadastrar endereço: ${response.statusText}`);
     }

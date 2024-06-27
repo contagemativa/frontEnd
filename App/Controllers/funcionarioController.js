@@ -6,26 +6,27 @@ import { postPessoa } from "../Models/pessoaModel";
 export async function cadastrarFuncionario(funcionario) {
   try {
     const enderecoResponse = await postEndereco(funcionario.pessoa.endereco);
-    if (enderecoResponse.status === 200) {
-      const pessoaResponse = await postPessoa(funcionario.pessoa);
-      if (pessoaResponse.status === 200) {
-        const funcionarioResponse = await postFuncionario(funcionario);
-        if(funcionarioResponse.status === 200){
+    if (enderecoResponse !== null) {
+      const pessoaResponse = await postPessoa(funcionario.pessoa, enderecoResponse.id);
+      if (pessoaResponse !== null) {
+        const funcionarioResponse = await postFuncionario(funcionario.id, pessoaResponse.id);
+        if(funcionarioResponse.status !== null){
+            toast.success("Funcionário finalizado com sucesso");
             return funcionarioResponse;
         } else {
-            toast.error("Erro ao finalizar cadastro do funcionário");
+            toast.error("Erro a finalizar cadastro funcionário");
             return;
         }
       } else {
-        toast.error("Erro ao cadastrar dados do funcionário");
+        toast.error("Dados Gerais do funcionário");
         return;
       }
     } else {
-      toast.error("Erro ao cadastrar endereço!");
+      toast.error("Informações de endereço");
       return;
     }
   } catch (error) {
-    console.error("Erro ao cadastrar funcionário:", error);
+    console.error("Erro:", error);
     throw error;
   }
 }
