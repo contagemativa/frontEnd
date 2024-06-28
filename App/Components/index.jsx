@@ -9,7 +9,7 @@ import ToastMediaQuery from "./Common/Toast/ToastMediaQuery";
 const root = createRoot(document.getElementById("program-container"));
 root.render(
   <>
-    <Router basename="/public">
+    <Router basename="/frontend/public">
       <App />
       <ToastMediaQuery />
     </Router>

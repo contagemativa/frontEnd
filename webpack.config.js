@@ -2,11 +2,11 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: 'https://contagemativa.github.io/frontEnd/App/Components/index.jsx',
+  entry: './frontend/app/Components/index.jsx',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'frontend/public'),
     filename: 'bundle.js',
-    publicPath: 'https://contagemativa.github.io/frontEnd/public', // Caminho base para os arquivos estáticos
+    publicPath: '/frontEnd/public/', // Caminho base para os arquivos estáticos
   },
   module: {
     rules: [
@@ -31,7 +31,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: 'public',
+              context: 'frontend/public',
             },
           },
         ],
@@ -43,7 +43,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'frontend/public'),
       watch: {
         ignored: /node_modules/,
       },
