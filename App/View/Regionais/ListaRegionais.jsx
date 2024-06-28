@@ -71,7 +71,6 @@ export default function ListaRegionais() {
     const fetchData = async () => {
         try {
             const regionais = await fetchRegionais();
-            console.log(regionais)
             setDataContentTable(regionais);
             setFilteredRecords(regionais); 
             setLoading(false);

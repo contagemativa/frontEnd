@@ -7,7 +7,7 @@ export default function Endereco() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const keys = name.split('.');
-    console.log(funcionario);
+    
     setFuncionario((prevFuncionario) => {
       let updatedFuncionario = { ...prevFuncionario };
       let currentLevel = updatedFuncionario;

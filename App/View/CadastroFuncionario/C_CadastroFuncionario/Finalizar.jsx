@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 export default function Finalizar() {
   const { funcionario } = useContext(FuncionarioContext);
-  console.log(funcionario);
 
   const handleConfirmarCadastro = async (e) => {
     e.preventDefault();
