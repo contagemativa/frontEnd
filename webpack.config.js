@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/', // Definir publicPath como '/'
+    publicPath: '/frontEnd/', // Definir publicPath como o nome do repositório
   },
   module: {
     rules: [
