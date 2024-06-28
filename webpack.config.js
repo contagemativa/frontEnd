@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'), // Diretório de saída para os arquivos construídos
     filename: 'bundle.js', // Nome do arquivo de saída
-    publicPath: '/',
+    publicPath: '/frontEnd/public/',
   },
   module: {
     rules: [
