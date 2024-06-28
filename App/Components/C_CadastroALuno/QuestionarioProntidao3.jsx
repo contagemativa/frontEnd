@@ -16,7 +16,6 @@ const QuestionarioProntidao3 = () => {
     }));
 
     setTimeout(() => {
-      console.log(aluno);
     }, 100);
   };
 

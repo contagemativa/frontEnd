@@ -11,13 +11,11 @@ const QuestionarioProntidao2 = () => {
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: value // Armazenando a string "true" ou "false"
+        [name]: value 
       }
     }));
 
-    // Debugging: Imprimir o estado atualizado do aluno
     setTimeout(() => {
-      console.log(aluno);
     }, 100);
   };
 

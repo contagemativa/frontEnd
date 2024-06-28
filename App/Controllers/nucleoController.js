@@ -15,7 +15,7 @@ export async function fetchNucleos() {
 export async function createNucleo(nucleo) {
   try {
     const enderecoResponse = await postEndereco(nucleo.endereco);
-    if (enderecoResponse && enderecoResponse.id) {
+    if (enderecoResponse != null) {
       const nucleoResponse = await postNucleo(nucleo, enderecoResponse.id);
       if (nucleoResponse != null) {
         toast.success("Núcleo cadastrado com sucesso!");

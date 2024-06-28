@@ -6,16 +6,10 @@ import { toast } from "react-toastify";
 
 const FinalizaCadastroAluno = () => {
   const { aluno } = useContext(AlunoContext);
-  console.log(aluno);
 
   const handleConfirmarCadastro = async (e) => {
     e.preventDefault();
-    try {
-      console.log(aluno);
-      await cadastrarAluno(aluno);
-    } catch (erro) {
-      toast.error("Erro ao cadastrar aluno: " + erro.message);
-    }
+    await cadastrarAluno(aluno);
   };
 
   return (

@@ -13,8 +13,6 @@ const DadosSocioeconomicos2 = () => {
         [name]: value
       }
     }));
-
-    console.log(aluno);
   };
 
   return (

@@ -2,6 +2,7 @@ import config from '../config';
 
 export async function postEndereco(endereco) {
   try {
+    console.log(endereco)
     const response = await fetch(`${config.apiUrl}/endereco/cadastrar`, {
       method: "POST",
       headers: {

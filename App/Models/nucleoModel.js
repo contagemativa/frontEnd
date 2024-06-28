@@ -17,14 +17,20 @@ export async function getAllNucleos() {
     }
   }
   
-  export async function postNucleo(nucleo) {
+  export async function postNucleo(nucleo, enderecoId) {
+    console.log(enderecoId)
     try {
-      const response = await fetch(`${config.apiUrl}/endereco/cadastrar`, {
+      const response = await fetch(`${config.apiUrl}/nucleo/cadastrar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(nucleo),
+        body: JSON.stringify({
+          "id": nucleo.id,
+          "nome": nucleo.nome,
+          "endereco": enderecoId,
+          "regional": nucleo.regional
+        }),
       });
   
       if (response.ok) {

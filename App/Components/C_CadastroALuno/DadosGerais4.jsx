@@ -7,7 +7,6 @@ const DadosGerais4 = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const keys = name.split('.');
-    console.log(aluno);
     setAluno((prevAluno) => {
       let updatedAluno = { ...prevAluno };
       let currentLevel = updatedAluno;

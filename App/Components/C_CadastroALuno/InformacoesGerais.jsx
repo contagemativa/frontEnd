@@ -10,18 +10,13 @@ const InformacoesGerais = () => {
   const [selectedNucleoId, setSelectedNucleoId] = useState('');
 
   useEffect(() => {
-    // Verifica se há um núcleo previamente selecionado no contexto
     if (aluno.nucleoDeOrigem.id) {
-      setSelectedNucleoId(aluno.nucleoDeOrigem.id.toString()); // Converte para string se necessário
+      setSelectedNucleoId(aluno.nucleoDeOrigem.id.toString()); 
     }
 
     const getNucleos = async () => {
-      try {
-        const nucleosResponse = await fetchNucleos();
-        setNucleos(nucleosResponse); 
-      } catch (error) {
-        console.error('Erro ao buscar núcleos:', error);
-      }
+      const nucleosResponse = await fetchNucleos();
+      setNucleos(nucleosResponse); 
     };
 
     getNucleos();

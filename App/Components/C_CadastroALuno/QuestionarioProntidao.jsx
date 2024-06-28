@@ -11,7 +11,7 @@ const QuestionarioProntidao = () => {
       ...prevAluno,
       questionarioProntidao: {
         ...prevAluno.questionarioProntidao,
-        [name]: value // Armazenando a string "true" ou "false"
+        [name]: value 
       }
     }));
   };

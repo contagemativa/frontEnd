@@ -6,7 +6,6 @@ const DadosFisicos1 = () => {
 
   const handleChange = (e) => {
     const { value } = e.target;
-    console.log(aluno);
     setAluno((prevAluno) => ({
       ...prevAluno,
       fichaMedica: {

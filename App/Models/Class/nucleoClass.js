@@ -3,6 +3,7 @@ import React, { createContext, useState } from 'react';
 export const NucleoContext = createContext();
 
 export const NucleoProvider = ({ children }) => {
+  
 const [nucleo, setNucleo] = useState({
     id: 0,
     nome: '',
