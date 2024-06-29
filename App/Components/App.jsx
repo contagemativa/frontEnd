@@ -11,7 +11,7 @@ import Cadastros from "../View/Cadastro/Cadastro";
 import CadastroNucleo from "../View/CadastroNucleo/CadastroNucleo";
 import Regionais from "../View/Regionais/ListaRegionais";
 import CadastroFuncionario from "../View/CadastroFuncionario/CadastroFuncionario";
-import EmDesenvolvimento from "../View/EmDesenvolvimento/EmDesenvolvimento";
+import EmDesenvolvimento from "../View/Em Desenvolvimento/EmDesenvolvimento";
 
 export default function App() {
   return (
