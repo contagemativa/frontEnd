@@ -2,11 +2,11 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './App/Components/index.jsx',
+  entry: './public/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/frontEnd/public/', // Definir publicPath como o nome do repositório
+    publicPath: '/', 
   },
   module: {
     rules: [
