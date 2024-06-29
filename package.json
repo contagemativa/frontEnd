@@ -24,7 +24,7 @@
         "build-css": "npx tailwindcss -i public/css/input.css -o public/css/output.css --watch",
         "build": "webpack --mode production",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d public",
+        "deploy": "dev -d public",
         "start": "webpack serve --mode development"
     },
     "dependencies": {
