@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginForm from "../View/Login/LoginForm";
 import Home from "../View/Home/home";
-import ConfigAluno from "../View/ConfigAluno/ConfigAluno";
+import ConfigAluno from "../View/ConfigAluno/ConfigAluno"
 import CadastroAluno from "../View/CadastroAluno/CadastroAluno";
 import CadastroRegional from "../View/CadastroRegional/CadastroRegional";
 import Aluno from "../View/Aluno/Aluno";
@@ -21,15 +21,15 @@ export default function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Aluno" element={<EmDesenvolvimento />} />
         <Route path="/ListaAlunos" element={<ListaAlunos />} />
-        <Route path="/Professor" element={<EmDesenvolvimento />} /> 
-        <Route path="/Regionais" element={<Regionais />} /> 
-        <Route path="/Cadastros" element={<Cadastros />} /> 
-        <Route path="/ConfigAluno" element={<EmDesenvolvimento />} />
-        <Route path="/Cadastros/CadastroRegional" element={<CadastroRegional />} />
-        <Route path="/Cadastros/CadastroNucleo" element={<CadastroNucleo />} />
-        <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno />} />
-        <Route path="/Cadastros/CadastroFuncionario" element={<CadastroFuncionario />} /> 
-        <Route path="/EmDesenvolvimento" element={<EmDesenvolvimento />} />      
+        <Route path="/Professor" element={<EmDesenvolvimento/>} /> 
+        <Route path="/Regionais" element={<Regionais/>} /> 
+        <Route path="/Cadastros" element={<Cadastros/>} /> 
+        <Route path="/ConfigAluno" element={<EmDesenvolvimento/>}/>
+        <Route path="/Cadastros/CadastroRegional" element={<CadastroRegional/>}/>
+        <Route path="/Cadastros/CadastroNucleo" element={<CadastroNucleo/>}/>
+        <Route path="/Cadastros/CadastroAluno" element={<CadastroAluno/>}/>
+        <Route path="/Cadastros/CadastroFuncionario" element={<CadastroFuncionario/>}/> 
+        <Route path="/EmDesenvolvimento" element={<EmDesenvolvimento/>}/>      
       </Routes>
     </>
   );
