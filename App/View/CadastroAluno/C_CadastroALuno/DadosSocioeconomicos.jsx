@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AlunoContext } from "../../Models/Class/alunoClass";
+import { AlunoContext } from "../../../Class/alunoClass";
 
 const DadosSocioeconomicos = () => {
   const { aluno, setAluno } = useContext(AlunoContext);

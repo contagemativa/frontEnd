@@ -1,11 +1,9 @@
 import React from "react";
-import { IoFilter, IoFilterCircle } from "react-icons/io5";
 import { RxUpdate } from "react-icons/rx";
 import { LuFilterX } from "react-icons/lu";
 import { useState } from "react";
 import MediaQuery from "react-responsive";
-import { FaFilter, FaPlus } from "react-icons/fa";
-import { MdFilterAltOff } from "react-icons/md";
+import { FaPlus } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 import { Link } from "react-router-dom";
 

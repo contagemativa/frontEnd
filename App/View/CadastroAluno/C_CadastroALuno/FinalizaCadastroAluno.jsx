@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AlunoContext } from "../../Models/Class/alunoClass";
-import Button from "../Common/Button/Button";
-import { cadastrarAluno } from "../../Controllers/alunoController"; // Corrigir o nome da função importada
+import { AlunoContext } from "../../../Class/alunoClass";
+import Button from "../../../Components/Common/Button/Button";
+import { cadastrarAluno } from "../../../Controllers/alunoController"; // Corrigir o nome da função importada
 import { toast } from "react-toastify";
 
 const FinalizaCadastroAluno = () => {

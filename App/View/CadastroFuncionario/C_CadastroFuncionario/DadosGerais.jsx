@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FuncionarioContext } from "../../../Models/Class/funcionarioClass";
+import { FuncionarioContext } from "../../../Class/funcionarioClass";
 
 const DadosGerais = () => {
   const { funcionario, setFuncionario } = useContext(FuncionarioContext);

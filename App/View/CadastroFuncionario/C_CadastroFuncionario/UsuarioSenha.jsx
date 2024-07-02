@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FuncionarioContext } from "../../../Models/Class/funcionarioClass";
+import { FuncionarioContext } from "../../../Class/funcionarioClass";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 
 export default function UsuarioSenha() {

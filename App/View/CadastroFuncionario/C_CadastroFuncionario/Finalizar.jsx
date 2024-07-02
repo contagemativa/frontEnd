@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FuncionarioContext } from "../../../Models/Class/funcionarioClass";
+import { FuncionarioContext } from "../../../Class/funcionarioClass";
 import Button from "../../../Components/Common/Button/Button";
 import { cadastrarFuncionario } from "../../../Controllers/funcionarioController";
 import { toast } from "react-toastify";

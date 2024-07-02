@@ -6,7 +6,7 @@ import MainFrame from "../../Components/Layout/Main/Main.jsx";
 import DadosGerais from "./C_CadastroFuncionario/DadosGerais.jsx";
 import useForm from "../../Hooks/useForm.jsx"
 import MediaQuery from "react-responsive";
-import { FuncionarioProvider } from "../../Models/Class/funcionarioClass.js";
+import { FuncionarioProvider } from "../../Class/funcionarioClass.js";
 import Endereco from "./C_CadastroFuncionario/Endereco.jsx";
 import UsuarioSenha from "./C_CadastroFuncionario/UsuarioSenha.jsx";
 import Finalizar from "./C_CadastroFuncionario/Finalizar.jsx";

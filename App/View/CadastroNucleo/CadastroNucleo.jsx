@@ -4,7 +4,7 @@ import MediaQuery from 'react-responsive';
 import Button from '../../Components/Common/Button/Button';
 import { FaPlus } from 'react-icons/fa';
 import { fetchRegionais } from '../../Controllers/regionalController';
-import { NucleoContext, NucleoProvider } from '../../Models/Class/nucleoClass';
+import { NucleoContext, NucleoProvider } from '../../Class/nucleoClass';
 import { createNucleo } from '../../Controllers/nucleoController';
 import config from '../../config';
 

@@ -1,8 +1,6 @@
-import { getAllFuncionarios } from "../Models/funcionarioModel";
 import { PostLogin } from "../Models/loginModel";
-import { getAllNucleos } from "../Models/nucleoModel";
 import { getAllPessoas } from "../Models/pessoaModel";
-import Usuario, { salvarUsuario } from "../Models/Class/usuarioClass";
+import Usuario, { salvarUsuario } from "../Class/usuarioClass";
 import { toast } from "react-toastify";
 
 export async function handleLoginClick(usuario, senha, navigate, setError) {

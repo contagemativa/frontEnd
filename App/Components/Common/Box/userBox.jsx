@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import config from "../../../config";
-import { recuperarUsuario } from "../../../Models/Class/usuarioClass";
+import { recuperarUsuario } from "../../../Class/usuarioClass";
 
 export default function User({...props}) {
   const [user, setUser] = useState(null);

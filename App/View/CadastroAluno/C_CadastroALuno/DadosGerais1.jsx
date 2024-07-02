@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AlunoContext } from "../../Models/Class/alunoClass";
+import { AlunoContext } from "../../../Class/alunoClass";
 
 const DadosGerais = () => {
   const { aluno, setAluno } = useContext(AlunoContext);

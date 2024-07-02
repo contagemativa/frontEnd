@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AlunoContext } from "../../Models/Class/alunoClass";
+import { AlunoContext } from "../../../Class/alunoClass";
 
-const QuestionarioProntidao = () => {
+const QuestionarioProntidao2 = () => {
   const { aluno, setAluno } = useContext(AlunoContext);
 
   const handleChange = (e) => {
@@ -14,20 +14,23 @@ const QuestionarioProntidao = () => {
         [name]: value 
       }
     }));
+
+    setTimeout(() => {
+    }, 100);
   };
 
   const perguntas = [
     {
-      texto: "Algum médico já disse que você possui algum problema de coração e que só deveria realizar atividades físicas supervisionado por profissionais de saúde?",
-      name: "quest1"
+      texto: "Você apresenta desequilíbrio devido à tontura e/ou perda de consciência?",
+      name: "quest4"
     },
     {
-      texto: "Você sente dores no peito quando pratica atividades físicas?",
-      name: "quest2"
+      texto: "Você possui algum problema ósseo ou articular que poderia ser piorado pela atividade física?",
+      name: "quest5"
     },
     {
-      texto: "No último mês, você sentiu dores no peito quando praticou exercícios físicos?",
-      name: "quest3"
+      texto: "Você toma atualmente algum medicamento para pressão arterial e/ou problema de coração?",
+      name: "quest6"
     }
   ];
 
@@ -67,4 +70,4 @@ const QuestionarioProntidao = () => {
   );
 };
 
-export default QuestionarioProntidao;
+export default QuestionarioProntidao2;

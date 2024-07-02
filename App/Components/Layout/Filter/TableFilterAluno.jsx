@@ -1,9 +1,8 @@
 import React from "react";
-import { IoFilter, IoFilterCircle } from "react-icons/io5";
+import { IoFilter} from "react-icons/io5";
 import { RxUpdate } from "react-icons/rx";
 import { LuFilterX } from "react-icons/lu";
 import { useState } from "react";
-import MediaQuery from "react-responsive";
 
 export default function TableFilterAluno({ data, onFilter, onClearFilters, onUpdate}) {
   const [filterNomeAluno, setFilterNomeAluno] = useState("");

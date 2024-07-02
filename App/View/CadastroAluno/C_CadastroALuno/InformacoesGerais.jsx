@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AlunoContext } from "../../Models/Class/alunoClass";
-import { fetchNucleos } from "../../Controllers/nucleoController";
-import { recuperarUsuario } from "../../Models/Class/usuarioClass";
+import { AlunoContext } from "../../../Class/alunoClass";
+import { fetchNucleos } from "../../../Controllers/nucleoController";
+import { recuperarUsuario } from "../../../Class/usuarioClass";
 
 const InformacoesGerais = () => {
   const usuarioLogado = recuperarUsuario();

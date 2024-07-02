@@ -1,29 +1,28 @@
 import React, { useEffect } from "react";
 import config from "../../config.js";
-import { FaUserCircle, FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import UserBoxMobile from "../../Components/Common/Box/UserBoxMain.jsx";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Button from "../../Components/Common/Button/Button.jsx";
 import MainFrame from "../../Components/Layout/Main/Main.jsx";
-import InformacoesGerais from "../../Components/C_CadastroALuno/InformacoesGerais.jsx";
-import DadosGerais1 from "../../Components/C_CadastroALuno/DadosGerais1.jsx";
-import DadosGerais2 from "../../Components/C_CadastroALuno/DadosGerais2.jsx";
-import DadosGerais3 from "../../Components/C_CadastroALuno/DadosGerais3.jsx";
-import DadosGerais4 from "../../Components/C_CadastroALuno/DadosGerais4.jsx";
-import DadosFisicos1 from "../../Components/C_CadastroALuno/DadosFisicos1.jsx";
-import DadosFisicos2 from "../../Components/C_CadastroALuno/DadosFisicos2.jsx";
-import DadosFisicos3 from "../../Components/C_CadastroALuno/DadosFisicos3.jsx";
-import DadosFisicos4 from "../../Components/C_CadastroALuno/DadosFisicos4.jsx";
-import DadosSocioeconomicos from "../../Components/C_CadastroALuno/DadosSocioeconomicos.jsx";
-import DadosSocioeconomicos2 from "../../Components/C_CadastroALuno/DadosSocioeconomicos2.jsx";
-import QuestionarioProntidao from "../../Components/C_CadastroALuno/QuestionarioProntidao.jsx";
-import QuestionarioProntidao2 from "../../Components/C_CadastroALuno/QuestionarioProntidao2.jsx";
-import QuestionarioProntidao3 from "../../Components/C_CadastroALuno/QuestionarioProntidao3.jsx";
-import FinalizaCadastroAluno from "../../Components/C_CadastroALuno/FinalizaCadastroAluno.jsx";
+import InformacoesGerais from "./C_CadastroALuno/InformacoesGerais.jsx";
+import DadosGerais1 from "./C_CadastroALuno/DadosGerais1.jsx";
+import DadosGerais2 from "./C_CadastroALuno/DadosGerais2.jsx";
+import DadosGerais3 from "./C_CadastroALuno/DadosGerais3.jsx";
+import DadosGerais4 from "./C_CadastroALuno/DadosGerais4.jsx";
+import DadosFisicos1 from "./C_CadastroALuno/DadosFisicos1.jsx";
+import DadosFisicos2 from "./C_CadastroALuno/DadosFisicos2.jsx";
+import DadosFisicos3 from "./C_CadastroALuno/DadosFisicos3.jsx";
+import DadosFisicos4 from "./C_CadastroALuno/DadosFisicos4.jsx";
+import DadosSocioeconomicos from "./C_CadastroALuno/DadosSocioeconomicos.jsx";
+import DadosSocioeconomicos2 from "./C_CadastroALuno/DadosSocioeconomicos2.jsx";
+import QuestionarioProntidao from "./C_CadastroALuno/QuestionarioProntidao.jsx";
+import QuestionarioProntidao2 from "./C_CadastroALuno/QuestionarioProntidao2.jsx";
+import QuestionarioProntidao3 from "./C_CadastroALuno/QuestionarioProntidao3.jsx";
+import FinalizaCadastroAluno from "./C_CadastroALuno/FinalizaCadastroAluno.jsx";
 
 // Import Hooks
 import useForm from "../../Hooks/useForm.jsx"
 import MediaQuery from "react-responsive";
-import { AlunoProvider } from "../../Models/Class/alunoClass.js";
+import { AlunoProvider } from "../../Class/alunoClass.js";
 
 const formComponents = [
     <InformacoesGerais />,
