@@ -31,7 +31,7 @@ export default function LoginForm() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div>
-        <Logo width={250} />
+        <Logo width={250} className="animate-fade-up"/>
         <div className="shrink-0 w-full max-w-sm  bg-base-100">
           <form className="">
             <div className="form-control">
