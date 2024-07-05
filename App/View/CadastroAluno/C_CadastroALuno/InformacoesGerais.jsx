@@ -7,6 +7,7 @@ const InformacoesGerais = () => {
   const usuarioLogado = recuperarUsuario();
   const { aluno, setAluno } = useContext(AlunoContext);
   const [nucleos, setNucleos] = useState([]);
+  const [regionais, setRegionais] = useState([]);
   const [selectedNucleoId, setSelectedNucleoId] = useState('');
 
   useEffect(() => {
@@ -17,6 +18,11 @@ const InformacoesGerais = () => {
     const getNucleos = async () => {
       const nucleosResponse = await fetchNucleos();
       setNucleos(nucleosResponse); 
+    };
+
+    const getRegional = async () => {
+      const regionaisResponse = await fetchRegionais();
+      setRegionais(regionaisResponse);
     };
 
     getNucleos();
@@ -48,10 +54,28 @@ const InformacoesGerais = () => {
       </p>
       <label className="form-control w-full">
         <div className="label">
-          <span className="label-text">Núcleo: *</span>
+          <span className="label-text">Regional: *</span>
         </div>
         <select
           name="regional"
+          value={selectedNucleoId}
+          onChange={handleChange}
+          className="select select-bordered w-full max-w-xs"
+        >
+          <option disabled value="">Selecione uma Regional</option>
+          {regionais.map((regional) => (
+            <option key={regional.id} value={regional.id}>
+              {regional.nome}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="form-control w-full">
+        <div className="label">
+          <span className="label-text">Núcleo: *</span>
+        </div>
+        <select
+          name="nucleo"
           value={selectedNucleoId}
           onChange={handleChange}
           className="select select-bordered w-full max-w-xs"
