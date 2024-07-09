@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { AlunoContext } from "../../../Class/alunoClass";
 import { fetchNucleos } from "../../../Controllers/nucleoController";
 import { recuperarUsuario } from "../../../Class/usuarioClass";
+import { fetchRegionais } from "../../../Controllers/regionalController";
 
 const InformacoesGerais = () => {
   const usuarioLogado = recuperarUsuario();
-  const { aluno, setAluno } = useContext(AlunoContext);
+  const {aluno, setAluno} = useContext(AlunoContext);
   const [nucleos, setNucleos] = useState([]);
   const [regionais, setRegionais] = useState([]);
   const [selectedNucleoId, setSelectedNucleoId] = useState('');
@@ -14,29 +15,30 @@ const InformacoesGerais = () => {
     if (aluno.nucleoDeOrigem.id) {
       setSelectedNucleoId(aluno.nucleoDeOrigem.id.toString()); 
     }
+    
+    const getRegional = async () => {
+      const regionaisResponse = await fetchRegionais();
+      setRegionais(regionaisResponse);
+    };
 
     const getNucleos = async () => {
       const nucleosResponse = await fetchNucleos();
       setNucleos(nucleosResponse); 
     };
 
-    const getRegional = async () => {
-      const regionaisResponse = await fetchRegionais();
-      setRegionais(regionaisResponse);
-    };
-
+    getRegional();
     getNucleos();
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'regional') {
-      setSelectedNucleoId(value); // Atualiza o ID do núcleo selecionado
+      setSelectedNucleoId(value); 
       setAluno((prevAluno) => ({
         ...prevAluno,
         nucleoDeOrigem: {
           ...prevAluno.nucleoDeOrigem,
-          id: parseInt(value) // Atualiza o ID do núcleo no aluno
+          id: parseInt(value)
         }
       }));
     } else {
