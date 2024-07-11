@@ -33,7 +33,7 @@ module.exports = {
       {
         light: {
           "primary": "#B8398C",
-          "primary-focus": "#9f5184",
+          "primary-focus": "#9c2e72",
           "secondary": "#CC74AE",
           "secondary-focus": "#b3428d",
           "accent": "#37cdbe",
