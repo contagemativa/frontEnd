@@ -6,6 +6,7 @@ import { IoReorderThreeSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import LogoWhite from "../../Common/Logo/LogoWhite.jsx";
 import MediaQuery from "react-responsive";
+import { FaChalkboardTeacher, FaUsers } from "react-icons/fa";
 
 export default function Header({ className }) {
   return (
@@ -27,14 +28,44 @@ export default function Header({ className }) {
               <label htmlFor="my-drawer" className="btn btn-ghost bg-opacity-10 text-white">
                 <IoReorderThreeSharp size={25} />
               </label>
-            <div className="drawer-side" style={{zIndex:1}}>
-              <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-              <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4" >
-                {/* Sidebar content here */}
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-              </ul>
-            </div>
+              <div className="drawer-side" style={{zIndex:1}}>
+                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                <div className="menu bg-base-200 text-base-content min-h-full w-60 p-4 flex flex-col justify-between">
+                  <div>
+                    <div>
+                      <ul>
+                        <li>
+                          <Link to={"/Home"}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={"/ListaAlunos"}>Lista de Alunos</Link>
+                        </li>
+                        <li>
+                          <Link to={"/Professor"}>Professor</Link>
+                        </li>
+                        <li>
+                          <Link to={"/Regionais"}>Regionais</Link>
+                        </li>
+                        <li>
+                          <Link to={"/Cadastros"}>Cadastros</Link>
+                        </li>
+                      </ul>
+                    </div>                   
+                  </div>
+                  <div>
+                    <ul>
+                      <li>
+                        <Link to={"/Home"}>Home</Link>
+                      </li>
+                      <li>
+                        <Link to={"/"}>
+                          <label className="flex w-full gap-2"> Sair <MdExitToApp size={25}/></label>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>                 
+                </div>
+              </div>
           </div>
         </MediaQuery>      
         <Link to={"/EmDesenvolvimento"}> 

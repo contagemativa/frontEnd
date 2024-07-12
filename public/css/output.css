@@ -834,19 +834,6 @@ html {
   background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
 }
 
-.drawer {
-  position: relative;
-  display: grid;
-  grid-auto-columns: max-content auto;
-  width: 100%;
-}
-
-.drawer-content {
-  grid-column-start: 2;
-  grid-row-start: 1;
-  min-width: 0px;
-}
-
 .drawer-side {
   pointer-events: none;
   position: fixed;
@@ -2624,10 +2611,6 @@ html:has(.drawer-toggle:checked) {
   z-index: 50;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
 .m-1 {
   margin: 0.25rem;
 }
@@ -2706,12 +2689,12 @@ html:has(.drawer-toggle:checked) {
   height: 100vh;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
 .min-h-full {
   min-height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-1\/2 {
@@ -2720,6 +2703,10 @@ html:has(.drawer-toggle:checked) {
 
 .w-64 {
   width: 16rem;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .w-fit {
@@ -2735,8 +2722,12 @@ html:has(.drawer-toggle:checked) {
   width: 100vw;
 }
 
-.w-80 {
-  width: 20rem;
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .max-w-sm {
@@ -2880,10 +2871,6 @@ html:has(.drawer-toggle:checked) {
   border-width: 1px;
 }
 
-.border-none {
-  border-style: none;
-}
-
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -2901,6 +2888,11 @@ html:has(.drawer-toggle:checked) {
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+}
+
+.bg-base-200 {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
 }
 
 .bg-black {
@@ -2931,11 +2923,6 @@ html:has(.drawer-toggle:checked) {
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(204 116 174 / var(--tw-bg-opacity));
-}
-
-.bg-base-200 {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
 }
 
 .bg-opacity-10 {
@@ -3062,6 +3049,11 @@ html:has(.drawer-toggle:checked) {
   color: var(--fallback-b1,oklch(var(--b1)/var(--tw-text-opacity)));
 }
 
+.text-base-content {
+  --tw-text-opacity: 1;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+}
+
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -3105,11 +3097,6 @@ html:has(.drawer-toggle:checked) {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-base-content {
-  --tw-text-opacity: 1;
-  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
 }
 
 .shadow-md {
