@@ -7,16 +7,22 @@ import { Link } from "react-router-dom";
 import LogoWhite from "../../Common/Logo/LogoWhite.jsx";
 import MediaQuery from "react-responsive";
 import { FaChalkboardTeacher, FaUsers } from "react-icons/fa";
+import { IoArrowBack } from "react-icons/io5";
 
 export default function Header({ className }) {
   return (
     <header className="navbar bg-primary p-2 text-base-100">
       <div className="navbar-start rounded-r-2xl relative">
+        <Link to={"/Home"} className="btn btn-ghost">
+          <IoArrowBack size={25} />
+        </Link>
+      </div>
+      <div className="navbar-center rounded-r-2xl relative">
         <Link to={"/Home"}>
           <LogoWhite width={100} height={20} />
         </Link>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-1">
         <MediaQuery minWidth={1024}>
           <div>
             <UserBoxHeader />
@@ -25,8 +31,8 @@ export default function Header({ className }) {
         <MediaQuery maxWidth={1023}>
           <div>
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-              <label htmlFor="my-drawer" className="btn btn-ghost bg-opacity-10 text-white">
-                <IoReorderThreeSharp size={25} />
+              <label htmlFor="my-drawer" className="btn border-0 py-2 bg-secondary bg-opacity-30 text-white rounded-lg hover:bg-black hover:bg-opacity-10">
+                <IoReorderThreeSharp size={20} />
               </label>
               <div className="drawer-side" style={{zIndex:1}}>
                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
@@ -54,14 +60,11 @@ export default function Header({ className }) {
                   </div>
                   <div>
                     <ul>
-                      <li>
-                        <Link to={"/Home"}>Home</Link>
-                      </li>
-                      <li>
-                        <Link to={"/"}>
-                          <label className="flex w-full gap-2"> Sair <MdExitToApp size={25}/></label>
-                        </Link>
-                      </li>
+                      <Link to={"/"}>
+                        <li className=" bg-primary text-base-100 rounded-lg">
+                            <label className="flex justify-center gap-2 hover:bg-primaryHover"> Sair <MdExitToApp size={20}/></label>
+                        </li>
+                      </Link>
                     </ul>
                   </div>                 
                 </div>
@@ -69,13 +72,13 @@ export default function Header({ className }) {
           </div>
         </MediaQuery>      
         <Link to={"/EmDesenvolvimento"}> 
-          <button className="btn btn-ghost">
-              <IoIosSettings size={25} />
+          <button className="btn border-0 py-2 bg-secondary bg-opacity-30 text-white rounded-lg hover:bg-black hover:bg-opacity-10">
+            <IoIosSettings size={20} />
           </button>
         </Link>
         <Link to={"/"}>
-          <button className="btn btn-ghost">
-            <MdExitToApp size={25} />
+          <button  className="btn border-0 py-2 bg-secondary bg-opacity-30 text-white rounded-lg hover:bg-black hover:bg-opacity-10">
+            <MdExitToApp size={20} />
           </button>
         </Link>
       </div>
